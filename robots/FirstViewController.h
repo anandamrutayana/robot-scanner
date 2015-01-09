@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TwitterKit/TwitterKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController{
+    IBOutlet TWTRLogInButton* logInButton;
+}
 
+@property (nonatomic, retain) TWTRLogInButton* logInButton;
 
 @end
 

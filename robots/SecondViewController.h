@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+#import "MSAnnotatedGauge.h"
+
+
+@interface SecondViewController : UIViewController{
+    IBOutlet UILabel *proximity;
+}
+@property (nonatomic) MSAnnotatedGauge *annotatedGauge;
+@property (nonatomic) NSArray *gauges;
+@property (nonatomic) NSTimer *mytimer;
+@property (nonatomic, retain) UILabel *proximity;
 
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <TwitterKit/TwitterKit.h>
+#import <Fabric/Fabric.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[Twitter sharedInstance] startWithConsumerKey:@"PaUzPfdUlO1OroMXEb3isT6b5"
+                                    consumerSecret:@"8V7uvTzfiet2CZ85GG3EK7UueJRPGfiZIB9iYJceyj5RrOA2I3"];
+    [Fabric with:@[[Twitter sharedInstance]]];
+    
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.267 green:0.259 blue:0.243 alpha:1]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.267 green:0.259 blue:0.243 alpha:1]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
+
+    
     return YES;
 }
 

@@ -14,8 +14,22 @@
 
 @implementation FirstViewController
 
+@synthesize logInButton;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   logInButton =  [TWTRLogInButton buttonWithLogInCompletion:
+                                     ^(TWTRSession* session, NSError* error) {
+                                         if (session) {
+                                             NSLog(@"signed in as %@", [session userName]);
+                                         } else {
+                                             NSLog(@"error: %@", [error localizedDescription]);
+                                         }
+                                     }];
+    logInButton.center = self.view.center;
+//    [self.view addSubview:logInButton];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
