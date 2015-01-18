@@ -21,6 +21,7 @@
 		2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940A1A6B6A74009BB1A4 /* celeste-full.png */; };
 		2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940E1A6B6DEC009BB1A4 /* scoreboard.png */; };
 		225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 225994101A6B6EA5009BB1A4 /* scannerTab.png */; };
+		225994131A6C2C09009BB1A4 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 225994121A6C2C09009BB1A4 /* readme.md */; };
 		227192721A5C256100C9116E /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192711A5C256100C9116E /* title.png */; };
 		227192741A5C281600C9116E /* title2.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192731A5C281600C9116E /* title2.png */; };
 		2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2271927B1A5C2AC600C9116E /* gadget-gray.png */; };
@@ -86,6 +87,7 @@
 		2259940A1A6B6A74009BB1A4 /* celeste-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celeste-full.png"; sourceTree = "<group>"; };
 		2259940E1A6B6DEC009BB1A4 /* scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard.png; sourceTree = "<group>"; };
 		225994101A6B6EA5009BB1A4 /* scannerTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scannerTab.png; sourceTree = "<group>"; };
+		225994121A6C2C09009BB1A4 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		227192711A5C256100C9116E /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		227192731A5C281600C9116E /* title2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title2.png; sourceTree = "<group>"; };
 		2271927B1A5C2AC600C9116E /* gadget-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gadget-gray.png"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		221C81131A54C1D00000D6B6 = {
 			isa = PBXGroup;
 			children = (
+				225994121A6C2C09009BB1A4 /* readme.md */,
 				227196DD1A635EED00C9116E /* Frameworks */,
 				227192811A5F5E2400C9116E /* Gauges */,
 				22B203431A57B20F00249E31 /* TwitterKitResources.bundle */,
@@ -432,6 +435,7 @@
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
 				221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */,
+				225994131A6C2C09009BB1A4 /* readme.md in Sources */,
 				227192921A5F5E2400C9116E /* MSGradientArcLayer.m in Sources */,
 				227192911A5F5E2400C9116E /* MSArcLayer.m in Sources */,
 				225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */,
