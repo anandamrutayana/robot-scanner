@@ -8,7 +8,7 @@
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -24,9 +24,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="ZGc-5X-gKw"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ROBOT AVOIDANCE SYSTEM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raB-gd-uQa">
                                 <rect key="frame" x="188" y="326" width="196" height="21"/>
@@ -80,15 +77,19 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="logInButton" destination="SEp-du-326" id="oJ9-nR-6Ul"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="scanSegue" id="pLs-QH-TmZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="82"/>
+            <point key="canvasLocation" x="628" y="296"/>
         </scene>
-        <!--Field Notes-->
+        <!--Scoreboard-->
         <scene sceneID="svl-pM-ZRx">
             <objects>
-                <viewController id="Vmh-mg-5n7" sceneMemberID="viewController">
+                <viewController id="Vmh-mg-5n7" customClass="ScoreboardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v1K-i4-lF0"/>
                         <viewControllerLayoutGuide type="bottom" id="mmG-pG-FJe"/>
@@ -96,19 +97,139 @@
                     <view key="view" contentMode="scaleToFill" id="LNm-8o-v2i">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S0H-gf-YcI">
+                                <rect key="frame" x="-1" y="0.0" width="600" height="656"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LQt-pr-ATx">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LQt-pr-ATx" id="tn9-f0-YWR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vmh-mg-5n7" id="Oih-ui-6fy"/>
+                                    <outlet property="delegate" destination="Vmh-mg-5n7" id="Olt-BE-eOa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Field Notes" id="OIM-3F-ZMe"/>
+                    <tabBarItem key="tabBarItem" title="Scoreboard" image="scoreboard.png" selectedImage="scoreboard.png" id="OIM-3F-ZMe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qw-NH-7Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="578"/>
+            <point key="canvasLocation" x="1697" y="496"/>
+        </scene>
+        <!--Robot View Controller-->
+        <scene sceneID="rw4-yk-od2">
+            <objects>
+                <viewController id="uFp-ER-yf4" customClass="RobotViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UnF-hH-KrK"/>
+                        <viewControllerLayoutGuide type="bottom" id="sSD-Sb-8Qa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UDB-wk-PzY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="celeste-full.png" translatesAutoresizingMaskIntoConstraints="NO" id="ARL-Wc-6tg">
+                                <rect key="frame" x="214" y="79" width="110" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="qOC-rg-9Vk"/>
+                                    <constraint firstAttribute="height" constant="160" id="qvh-WX-nsg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Under attack from Celeste!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMO-EK-fjp">
+                                <rect key="frame" x="227" y="44" width="182" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.20000000000000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Disruption Code" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X33-kO-bfa">
+                                <rect key="frame" x="213" y="292" width="164" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Approach with caution!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh8-4J-e7x">
+                                <rect key="frame" x="216" y="265" width="177" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.20000000000000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTO-Lc-E9w">
+                                <rect key="frame" x="267" y="419" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqr-6T-ySL">
+                                <rect key="frame" x="263" y="341" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.792156862745098" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="QnV-Ri-ozt"/>
+                                    <constraint firstAttribute="height" constant="20" id="YuI-b3-xET"/>
+                                    <constraint firstAttribute="height" constant="40" id="e2q-7Q-MMi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="15"/>
+                                <color key="tintColor" red="0.79215686269999996" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Disrupt!">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.92156862750000001" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YuI-b3-xET"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.94901960780000005" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zqr-6T-ySL" firstAttribute="top" secondItem="X33-kO-bfa" secondAttribute="bottom" constant="20" id="07d-wG-MmQ"/>
+                            <constraint firstAttribute="centerX" secondItem="ARL-Wc-6tg" secondAttribute="centerX" id="4s5-ft-dbz"/>
+                            <constraint firstItem="Zqr-6T-ySL" firstAttribute="top" secondItem="X33-kO-bfa" secondAttribute="bottom" constant="20" id="8Eo-77-HJL"/>
+                            <constraint firstItem="dTO-Lc-E9w" firstAttribute="top" secondItem="Zqr-6T-ySL" secondAttribute="bottom" constant="20" id="B0b-us-A8h"/>
+                            <constraint firstItem="dTO-Lc-E9w" firstAttribute="top" secondItem="X33-kO-bfa" secondAttribute="bottom" constant="20" id="C3i-ut-1Hy"/>
+                            <constraint firstItem="dTO-Lc-E9w" firstAttribute="top" secondItem="Zqr-6T-ySL" secondAttribute="bottom" constant="20" id="DpR-E0-kbO"/>
+                            <constraint firstItem="ARL-Wc-6tg" firstAttribute="top" secondItem="GMO-EK-fjp" secondAttribute="bottom" constant="20" id="Gyr-TX-t3J"/>
+                            <constraint firstAttribute="centerX" secondItem="Zqr-6T-ySL" secondAttribute="centerX" id="PtJ-7f-mbe"/>
+                            <constraint firstAttribute="centerX" secondItem="X33-kO-bfa" secondAttribute="centerX" id="R6b-m9-EIA"/>
+                            <constraint firstItem="GMO-EK-fjp" firstAttribute="top" secondItem="UnF-hH-KrK" secondAttribute="bottom" constant="20" id="S0W-5A-ezf"/>
+                            <constraint firstItem="X33-kO-bfa" firstAttribute="top" secondItem="Oh8-4J-e7x" secondAttribute="bottom" constant="20" id="Ug6-9F-Eri"/>
+                            <constraint firstAttribute="centerX" secondItem="dTO-Lc-E9w" secondAttribute="centerX" id="VTN-J0-JtQ"/>
+                            <constraint firstAttribute="centerX" secondItem="Oh8-4J-e7x" secondAttribute="centerX" id="ZEH-tO-tjY"/>
+                            <constraint firstItem="Zqr-6T-ySL" firstAttribute="top" secondItem="X33-kO-bfa" secondAttribute="bottom" constant="20" id="aVa-yI-fQR"/>
+                            <constraint firstAttribute="centerX" secondItem="Oh8-4J-e7x" secondAttribute="centerX" id="dol-CA-diF"/>
+                            <constraint firstItem="Oh8-4J-e7x" firstAttribute="top" secondItem="ARL-Wc-6tg" secondAttribute="bottom" constant="20" id="msI-z1-5dS"/>
+                            <constraint firstAttribute="centerX" secondItem="GMO-EK-fjp" secondAttribute="centerX" id="rwe-CO-g2d"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="07d-wG-MmQ"/>
+                                <exclude reference="8Eo-77-HJL"/>
+                                <exclude reference="C3i-ut-1Hy"/>
+                                <exclude reference="DpR-E0-kbO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="disruptionCode" destination="X33-kO-bfa" id="dWH-bR-tc6"/>
+                        <outlet property="progress" destination="dTO-Lc-E9w" id="odg-cg-MNb"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="returnToScanner" id="q1G-3Y-JmT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWA-mc-KId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573" y="574"/>
         </scene>
         <!--Scanner-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="ScannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -159,15 +280,25 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scanner" image="tab_bar_icon_annotated.png" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Scanner" image="scannerTab.png" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Scanner" id="Dq6-eU-kxt"/>
                     <connections>
                         <outlet property="beaconView" destination="huD-tu-lGI" id="1YR-SE-26n"/>
                         <outlet property="proximity" destination="qYe-lI-Xda" id="rce-fz-cbz"/>
+                        <segue destination="uFp-ER-yf4" kind="show" identifier="encounter" id="e5J-3L-w0D"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <tabBar contentMode="scaleToFill" id="Xfx-CX-F8v">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items/>
+                    <color key="barTintColor" red="0.20392156859999999" green="0.20000000000000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="selectedImageTintColor" red="0.79215686269999996" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </tabBar>
             </objects>
-            <point key="canvasLocation" x="1158" y="467"/>
+            <point key="canvasLocation" x="2495" y="-399"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -178,6 +309,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20392156859999999" green="0.20000000000000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.79215686269999996" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
@@ -186,14 +319,19 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="-364"/>
+            <point key="canvasLocation" x="1697" y="-398"/>
         </scene>
     </scenes>
     <resources>
         <image name="bmlogo.png" width="200" height="48"/>
+        <image name="celeste-full.png" width="300" height="400"/>
         <image name="first" width="30" height="30"/>
         <image name="raygun.png" width="100" height="49"/>
         <image name="robot-banner-big.png" width="360" height="532"/>
-        <image name="tab_bar_icon_annotated.png" width="30" height="24"/>
+        <image name="scannerTab.png" width="30" height="30"/>
+        <image name="scoreboard.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q1G-3Y-JmT"/>
+    </inferredMetricsTieBreakers>
 </document>

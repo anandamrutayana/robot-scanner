@@ -11,13 +11,14 @@
 #import "MSAnnotatedGauge.h"
 
 
-@interface SecondViewController : UIViewController{
+@interface ScannerViewController : UIViewController{
     IBOutlet UILabel *proximity;
 }
 @property (nonatomic) MSAnnotatedGauge *annotatedGauge;
 @property (nonatomic) NSArray *gauges;
 @property (nonatomic) NSTimer *mytimer;
 @property (nonatomic, retain) UILabel *proximity;
+@property (nonatomic) int stepper;
 
 
 @end

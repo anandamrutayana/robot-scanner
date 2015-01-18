@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		221C81221A54C1D00000D6B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81211A54C1D00000D6B6 /* main.m */; };
 		221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81241A54C1D00000D6B6 /* AppDelegate.m */; };
-		221C81281A54C1D00000D6B6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81271A54C1D00000D6B6 /* FirstViewController.m */; };
-		221C812B1A54C1D00000D6B6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C812A1A54C1D00000D6B6 /* SecondViewController.m */; };
+		221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81271A54C1D00000D6B6 /* LoginViewController.m */; };
+		221C812B1A54C1D00000D6B6 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C812A1A54C1D00000D6B6 /* ScannerViewController.m */; };
 		221C812E1A54C1D10000D6B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221C812C1A54C1D10000D6B6 /* Main.storyboard */; };
 		221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221C812F1A54C1D10000D6B6 /* Images.xcassets */; };
 		221C81331A54C1D10000D6B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221C81311A54C1D10000D6B6 /* LaunchScreen.xib */; };
 		221C813F1A54C1D10000D6B6 /* robotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C813E1A54C1D10000D6B6 /* robotsTests.m */; };
+		225993FF1A64342E009BB1A4 /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225993FE1A64342E009BB1A4 /* IBMBluemix.framework */; };
+		225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994031A6959C9009BB1A4 /* RobotViewController.m */; };
+		225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994061A695E43009BB1A4 /* ScoreboardViewController.m */; };
+		2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940A1A6B6A74009BB1A4 /* celeste-full.png */; };
+		2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940E1A6B6DEC009BB1A4 /* scoreboard.png */; };
+		225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 225994101A6B6EA5009BB1A4 /* scannerTab.png */; };
 		227192721A5C256100C9116E /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192711A5C256100C9116E /* title.png */; };
 		227192741A5C281600C9116E /* title2.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192731A5C281600C9116E /* title2.png */; };
 		2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2271927B1A5C2AC600C9116E /* gadget-gray.png */; };
@@ -31,10 +37,16 @@
 		2271929B1A5F7DDA00C9116E /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 2271929A1A5F7DDA00C9116E /* banner.png */; };
 		2271929F1A5F814700C9116E /* robot-banner-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 2271929E1A5F814700C9116E /* robot-banner-big.png */; };
 		227192A11A5F885100C9116E /* raygun.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192A01A5F885100C9116E /* raygun.png */; };
+		227192A31A602F3B00C9116E /* celeste.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192A21A602F3B00C9116E /* celeste.png */; };
+		227196D51A635B2C00C9116E /* IBMCloudCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D01A635B2C00C9116E /* IBMCloudCode.framework */; };
+		227196D61A635B2C00C9116E /* IBMData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D11A635B2C00C9116E /* IBMData.framework */; };
+		227196D71A635B2C00C9116E /* IBMFileSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D21A635B2C00C9116E /* IBMFileSync.framework */; };
+		227196D91A635B2C00C9116E /* IBMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D41A635B2C00C9116E /* IBMPush.framework */; };
+		227196DC1A635C0500C9116E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 227196DB1A635C0500C9116E /* Player.m */; };
+		227196DF1A635F9900C9116E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196DE1A635F9900C9116E /* Foundation.framework */; };
 		22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203421A57B20F00249E31 /* TwitterKit.framework */; };
 		22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22B203431A57B20F00249E31 /* TwitterKitResources.bundle */; };
 		22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203441A57B20F00249E31 /* Fabric.framework */; };
-		22B2034B1A5AD88C00249E31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2034A1A5AD88C00249E31 /* ViewController.m */; };
 		22B203501A5AD8B600249E31 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2034D1A5AD8B600249E31 /* PulsingHaloLayer.m */; };
 		22B203511A5AD8B600249E31 /* MultiplePulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2034F1A5AD8B600249E31 /* MultiplePulsingHaloLayer.m */; };
 		22B203541A5B7DE200249E31 /* gadget.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B203531A5B7DE200249E31 /* gadget.png */; };
@@ -56,16 +68,24 @@
 		221C81211A54C1D00000D6B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		221C81231A54C1D00000D6B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		221C81241A54C1D00000D6B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		221C81261A54C1D00000D6B6 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		221C81271A54C1D00000D6B6 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		221C81291A54C1D00000D6B6 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		221C812A1A54C1D00000D6B6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		221C81261A54C1D00000D6B6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		221C81271A54C1D00000D6B6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		221C81291A54C1D00000D6B6 /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		221C812A1A54C1D00000D6B6 /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		221C812D1A54C1D10000D6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		221C812F1A54C1D10000D6B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		221C81321A54C1D10000D6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		221C81381A54C1D10000D6B6 /* robotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = robotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		221C813D1A54C1D10000D6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221C813E1A54C1D10000D6B6 /* robotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = robotsTests.m; sourceTree = "<group>"; };
+		225993FE1A64342E009BB1A4 /* IBMBluemix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMBluemix.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4) 2/IBMBluemix.framework"; sourceTree = "<group>"; };
+		225994021A6959C9009BB1A4 /* RobotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotViewController.h; sourceTree = "<group>"; };
+		225994031A6959C9009BB1A4 /* RobotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotViewController.m; sourceTree = "<group>"; };
+		225994051A695E43009BB1A4 /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
+		225994061A695E43009BB1A4 /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
+		2259940A1A6B6A74009BB1A4 /* celeste-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celeste-full.png"; sourceTree = "<group>"; };
+		2259940E1A6B6DEC009BB1A4 /* scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard.png; sourceTree = "<group>"; };
+		225994101A6B6EA5009BB1A4 /* scannerTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scannerTab.png; sourceTree = "<group>"; };
 		227192711A5C256100C9116E /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		227192731A5C281600C9116E /* title2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title2.png; sourceTree = "<group>"; };
 		2271927B1A5C2AC600C9116E /* gadget-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gadget-gray.png"; sourceTree = "<group>"; };
@@ -90,11 +110,18 @@
 		2271929A1A5F7DDA00C9116E /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
 		2271929E1A5F814700C9116E /* robot-banner-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-banner-big.png"; sourceTree = "<group>"; };
 		227192A01A5F885100C9116E /* raygun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raygun.png; sourceTree = "<group>"; };
+		227192A21A602F3B00C9116E /* celeste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celeste.png; sourceTree = "<group>"; };
+		227196D01A635B2C00C9116E /* IBMCloudCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMCloudCode.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMCloudCode.framework"; sourceTree = "<group>"; };
+		227196D11A635B2C00C9116E /* IBMData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMData.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMData.framework"; sourceTree = "<group>"; };
+		227196D21A635B2C00C9116E /* IBMFileSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMFileSync.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMFileSync.framework"; sourceTree = "<group>"; };
+		227196D31A635B2C00C9116E /* IBMLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMLocation.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMLocation.framework"; sourceTree = "<group>"; };
+		227196D41A635B2C00C9116E /* IBMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMPush.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMPush.framework"; sourceTree = "<group>"; };
+		227196DA1A635C0500C9116E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../sbclient/SBI/Player.h; sourceTree = "<group>"; };
+		227196DB1A635C0500C9116E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../../sbclient/SBI/Player.m; sourceTree = "<group>"; };
+		227196DE1A635F9900C9116E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B203421A57B20F00249E31 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		22B203431A57B20F00249E31 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		22B203441A57B20F00249E31 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		22B203491A5AD88C00249E31 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22B2034A1A5AD88C00249E31 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22B2034C1A5AD8B600249E31 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = ../../PulsingHalo/PulsingHalo/PulsingHaloLayer.h; sourceTree = "<group>"; };
 		22B2034D1A5AD8B600249E31 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = ../../PulsingHalo/PulsingHalo/PulsingHaloLayer.m; sourceTree = "<group>"; };
 		22B2034E1A5AD8B600249E31 /* MultiplePulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiplePulsingHaloLayer.h; path = ../../PulsingHalo/PulsingHalo/MultiplePulsingHaloLayer.h; sourceTree = "<group>"; };
@@ -107,7 +134,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227196DF1A635F9900C9116E /* Foundation.framework in Frameworks */,
+				227196D51A635B2C00C9116E /* IBMCloudCode.framework in Frameworks */,
+				227196D61A635B2C00C9116E /* IBMData.framework in Frameworks */,
+				227196D71A635B2C00C9116E /* IBMFileSync.framework in Frameworks */,
+				227196D91A635B2C00C9116E /* IBMPush.framework in Frameworks */,
 				22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */,
+				225993FF1A64342E009BB1A4 /* IBMBluemix.framework in Frameworks */,
 				22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,10 +158,9 @@
 		221C81131A54C1D00000D6B6 = {
 			isa = PBXGroup;
 			children = (
+				227196DD1A635EED00C9116E /* Frameworks */,
 				227192811A5F5E2400C9116E /* Gauges */,
-				22B203421A57B20F00249E31 /* TwitterKit.framework */,
 				22B203431A57B20F00249E31 /* TwitterKitResources.bundle */,
-				22B203441A57B20F00249E31 /* Fabric.framework */,
 				221C811E1A54C1D00000D6B6 /* robots */,
 				221C813B1A54C1D10000D6B6 /* robotsTests */,
 				221C811D1A54C1D00000D6B6 /* Products */,
@@ -147,23 +179,27 @@
 		221C811E1A54C1D00000D6B6 /* robots */ = {
 			isa = PBXGroup;
 			children = (
+				227196DA1A635C0500C9116E /* Player.h */,
+				227196DB1A635C0500C9116E /* Player.m */,
 				22B203521A5B7DD400249E31 /* images */,
 				22B2034C1A5AD8B600249E31 /* PulsingHaloLayer.h */,
 				22B2034D1A5AD8B600249E31 /* PulsingHaloLayer.m */,
 				22B2034E1A5AD8B600249E31 /* MultiplePulsingHaloLayer.h */,
 				22B2034F1A5AD8B600249E31 /* MultiplePulsingHaloLayer.m */,
-				22B203491A5AD88C00249E31 /* ViewController.h */,
-				22B2034A1A5AD88C00249E31 /* ViewController.m */,
 				221C81231A54C1D00000D6B6 /* AppDelegate.h */,
 				221C81241A54C1D00000D6B6 /* AppDelegate.m */,
-				221C81261A54C1D00000D6B6 /* FirstViewController.h */,
-				221C81271A54C1D00000D6B6 /* FirstViewController.m */,
-				221C81291A54C1D00000D6B6 /* SecondViewController.h */,
-				221C812A1A54C1D00000D6B6 /* SecondViewController.m */,
+				221C81261A54C1D00000D6B6 /* LoginViewController.h */,
+				221C81271A54C1D00000D6B6 /* LoginViewController.m */,
+				221C81291A54C1D00000D6B6 /* ScannerViewController.h */,
+				221C812A1A54C1D00000D6B6 /* ScannerViewController.m */,
 				221C812C1A54C1D10000D6B6 /* Main.storyboard */,
 				221C812F1A54C1D10000D6B6 /* Images.xcassets */,
 				221C81311A54C1D10000D6B6 /* LaunchScreen.xib */,
 				221C811F1A54C1D00000D6B6 /* Supporting Files */,
+				225994021A6959C9009BB1A4 /* RobotViewController.h */,
+				225994031A6959C9009BB1A4 /* RobotViewController.m */,
+				225994051A695E43009BB1A4 /* ScoreboardViewController.h */,
+				225994061A695E43009BB1A4 /* ScoreboardViewController.m */,
 			);
 			path = robots;
 			sourceTree = "<group>";
@@ -215,9 +251,29 @@
 			path = Gauges;
 			sourceTree = "<group>";
 		};
+		227196DD1A635EED00C9116E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				225993FE1A64342E009BB1A4 /* IBMBluemix.framework */,
+				227196DE1A635F9900C9116E /* Foundation.framework */,
+				22B203421A57B20F00249E31 /* TwitterKit.framework */,
+				22B203441A57B20F00249E31 /* Fabric.framework */,
+				227196D01A635B2C00C9116E /* IBMCloudCode.framework */,
+				227196D11A635B2C00C9116E /* IBMData.framework */,
+				227196D21A635B2C00C9116E /* IBMFileSync.framework */,
+				227196D31A635B2C00C9116E /* IBMLocation.framework */,
+				227196D41A635B2C00C9116E /* IBMPush.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22B203521A5B7DD400249E31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				225994101A6B6EA5009BB1A4 /* scannerTab.png */,
+				2259940E1A6B6DEC009BB1A4 /* scoreboard.png */,
+				2259940A1A6B6A74009BB1A4 /* celeste-full.png */,
+				227192A21A602F3B00C9116E /* celeste.png */,
 				227192A01A5F885100C9116E /* raygun.png */,
 				2271929E1A5F814700C9116E /* robot-banner-big.png */,
 				2271929A1A5F7DDA00C9116E /* banner.png */,
@@ -297,6 +353,9 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				se,
 			);
 			mainGroup = 221C81131A54C1D00000D6B6;
 			productRefGroup = 221C811D1A54C1D00000D6B6 /* Products */;
@@ -317,6 +376,8 @@
 				22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */,
 				221C812E1A54C1D10000D6B6 /* Main.storyboard in Resources */,
 				2271929B1A5F7DDA00C9116E /* banner.png in Resources */,
+				2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */,
+				227192A31A602F3B00C9116E /* celeste.png in Resources */,
 				2271927E1A5F06BC00C9116E /* gadget-whole.png in Resources */,
 				227192A11A5F885100C9116E /* raygun.png in Resources */,
 				227192801A5F147200C9116E /* bmlogo.png in Resources */,
@@ -325,8 +386,10 @@
 				2271929F1A5F814700C9116E /* robot-banner-big.png in Resources */,
 				227192991A5F719700C9116E /* tab_bar_icon_annotated@2x.png in Resources */,
 				221C81331A54C1D10000D6B6 /* LaunchScreen.xib in Resources */,
+				225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */,
 				227192741A5C281600C9116E /* title2.png in Resources */,
 				22B203541A5B7DE200249E31 /* gadget.png in Resources */,
+				2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */,
 				2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */,
 				221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */,
 			);
@@ -364,18 +427,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B203501A5AD8B600249E31 /* PulsingHaloLayer.m in Sources */,
-				221C812B1A54C1D00000D6B6 /* SecondViewController.m in Sources */,
+				221C812B1A54C1D00000D6B6 /* ScannerViewController.m in Sources */,
+				227196DC1A635C0500C9116E /* Player.m in Sources */,
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
-				221C81281A54C1D00000D6B6 /* FirstViewController.m in Sources */,
+				221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */,
 				227192921A5F5E2400C9116E /* MSGradientArcLayer.m in Sources */,
 				227192911A5F5E2400C9116E /* MSArcLayer.m in Sources */,
+				225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */,
 				227192931A5F5E2400C9116E /* MSNeedleView.m in Sources */,
 				227192951A5F5E2400C9116E /* MSSimpleGauge.m in Sources */,
 				227192901A5F5E2400C9116E /* MSAnnotatedGauge.m in Sources */,
 				22B203511A5AD8B600249E31 /* MultiplePulsingHaloLayer.m in Sources */,
+				225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */,
 				221C81221A54C1D00000D6B6 /* main.m in Sources */,
-				22B2034B1A5AD88C00249E31 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,9 +565,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					2,
 				);
 				INFOPLIST_FILE = robots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -514,9 +588,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					2,
 				);
 				INFOPLIST_FILE = robots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 IBM. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ScannerViewController.h"
 
 #import "PulsingHaloLayer.h"
 #import "MultiplePulsingHaloLayer.h"
@@ -15,7 +15,7 @@
 #define kMaxRadius 160
 
 
-@interface SecondViewController ()
+@interface ScannerViewController ()
 @property (nonatomic, weak) MultiplePulsingHaloLayer *mutiHalo;
 @property (nonatomic, weak) PulsingHaloLayer *halo;
 @property (nonatomic, weak) IBOutlet UIImageView *beaconView;
@@ -31,7 +31,7 @@
 @end
 
 
-@implementation SecondViewController
+@implementation ScannerViewController
 
 @synthesize proximity;
 
@@ -80,16 +80,33 @@
                                    userInfo:nil
                                     repeats:YES];
     
+    self.stepper = 5;
 }
 
 -(void)updateGauge
 {
-    self.annotatedGauge.value = self.annotatedGauge.value + 5;
+    
+    
+    self.annotatedGauge.value = self.annotatedGauge.value + self.stepper;
     
     proximity.text = [NSString stringWithFormat:@"Proximity: %d metres", 70 - (int)roundf( self.annotatedGauge.value )] ;
     
+    if( self.annotatedGauge.value == 45 ){
+        
+        self.annotatedGauge.value = 30;
+        
+        self.stepper = 10;
+    }
+    
+    if( self.annotatedGauge.value == 20 ){
+        
+        self.annotatedGauge.value = 35;
+    }
+    
     if( self.annotatedGauge.value == 70 ){
         [self.mytimer invalidate]; self.mytimer = nil;
+        
+         [self performSegueWithIdentifier:@"encounter" sender:self];
     }
 }
 

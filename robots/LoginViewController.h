@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <TwitterKit/TwitterKit.h>
 
-@interface FirstViewController : UIViewController{
+@interface LoginViewController : UIViewController{
     IBOutlet TWTRLogInButton* logInButton;
 }
 
