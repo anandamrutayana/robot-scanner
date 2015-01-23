@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Player" syncable="YES"/>
+    <entity name="Robot" representedClassName="Robot" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disruption" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fullshot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iBeacon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mugshot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="techZone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Robot" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Player" positionX="-54" positionY="63" width="128" height="45"/>
+    </elements>
+</model>

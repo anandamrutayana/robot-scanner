@@ -61,7 +61,7 @@
       
         CGPoint innerArcStartPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideBegining];
         _startRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, innerArcStartPoint.y+4, innerArcStartPoint.x, 14)];
-        _startRangeLabel.font = [UIFont systemFontOfSize:10];
+        _startRangeLabel.font = [UIFont systemFontOfSize:12];
         _startRangeLabel.textColor = [UIColor lightGrayColor];
         _startRangeLabel.textAlignment = NSTextAlignmentRight;
         _startRangeLabel.backgroundColor = [UIColor clearColor];
@@ -69,7 +69,7 @@
         
         CGPoint innerArcEndPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideEnd];
         _endRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(innerArcEndPoint.x, innerArcEndPoint.y+4, self.frame.size.width-innerArcEndPoint.x, 14)];
-        _endRangeLabel.font = [UIFont systemFontOfSize:10];
+        _endRangeLabel.font = [UIFont systemFontOfSize:12];
         _endRangeLabel.textColor = [UIColor lightGrayColor];
         _endRangeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_endRangeLabel];

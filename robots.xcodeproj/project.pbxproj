@@ -11,17 +11,22 @@
 		221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81241A54C1D00000D6B6 /* AppDelegate.m */; };
 		221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C81271A54C1D00000D6B6 /* LoginViewController.m */; };
 		221C812B1A54C1D00000D6B6 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C812A1A54C1D00000D6B6 /* ScannerViewController.m */; };
-		221C812E1A54C1D10000D6B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221C812C1A54C1D10000D6B6 /* Main.storyboard */; };
 		221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221C812F1A54C1D10000D6B6 /* Images.xcassets */; };
 		221C81331A54C1D10000D6B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221C81311A54C1D10000D6B6 /* LaunchScreen.xib */; };
 		221C813F1A54C1D10000D6B6 /* robotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 221C813E1A54C1D10000D6B6 /* robotsTests.m */; };
-		225993FF1A64342E009BB1A4 /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225993FE1A64342E009BB1A4 /* IBMBluemix.framework */; };
 		225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994031A6959C9009BB1A4 /* RobotViewController.m */; };
 		225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994061A695E43009BB1A4 /* ScoreboardViewController.m */; };
 		2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940A1A6B6A74009BB1A4 /* celeste-full.png */; };
 		2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940E1A6B6DEC009BB1A4 /* scoreboard.png */; };
 		225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 225994101A6B6EA5009BB1A4 /* scannerTab.png */; };
 		225994131A6C2C09009BB1A4 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 225994121A6C2C09009BB1A4 /* readme.md */; };
+		225994151A6CAA27009BB1A4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994141A6CAA27009BB1A4 /* CoreData.framework */; };
+		225994181A6CAA91009BB1A4 /* RobotModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */; };
+		2259941B1A6D4D41009BB1A4 /* RobotRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 2259941A1A6D4D41009BB1A4 /* RobotRemote.m */; };
+		225994211A6DE81C009BB1A4 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994201A6DE81C009BB1A4 /* Robot.m */; };
+		225994431A6F555A009BB1A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994421A6F555A009BB1A4 /* SystemConfiguration.framework */; };
+		225994451A6F5BB2009BB1A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994441A6F5BB2009BB1A4 /* CoreGraphics.framework */; };
+		225994471A6F5BC8009BB1A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994461A6F5BC8009BB1A4 /* UIKit.framework */; };
 		227192721A5C256100C9116E /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192711A5C256100C9116E /* title.png */; };
 		227192741A5C281600C9116E /* title2.png in Resources */ = {isa = PBXBuildFile; fileRef = 227192731A5C281600C9116E /* title2.png */; };
 		2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2271927B1A5C2AC600C9116E /* gadget-gray.png */; };
@@ -51,6 +56,13 @@
 		22B203501A5AD8B600249E31 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2034D1A5AD8B600249E31 /* PulsingHaloLayer.m */; };
 		22B203511A5AD8B600249E31 /* MultiplePulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2034F1A5AD8B600249E31 /* MultiplePulsingHaloLayer.m */; };
 		22B203541A5B7DE200249E31 /* gadget.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B203531A5B7DE200249E31 /* gadget.png */; };
+		22BDCADA1A6F74AC006D3A40 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDCAD91A6F74AC006D3A40 /* libEstimoteSDK.a */; };
+		22BDCADC1A6F8159006D3A40 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2259943E1A6F5544009BB1A4 /* CoreLocation.framework */; };
+		22BDCADD1A6F8659006D3A40 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994401A6F554E009BB1A4 /* CoreBluetooth.framework */; };
+		22FFB7921A70814A00A495E8 /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FFB7911A70814A00A495E8 /* IBMBluemix.framework */; };
+		22FFB7961A716E2000A495E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7941A716E2000A495E8 /* Main.storyboard */; };
+		22FFB7981A7177BC00A495E8 /* raygun-scanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7971A7177BC00A495E8 /* raygun-scanner.png */; };
+		22FFB79A1A7214B100A495E8 /* watson-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7991A7214B100A495E8 /* watson-full.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +85,6 @@
 		221C81271A54C1D00000D6B6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		221C81291A54C1D00000D6B6 /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		221C812A1A54C1D00000D6B6 /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
-		221C812D1A54C1D10000D6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		221C812F1A54C1D10000D6B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		221C81321A54C1D10000D6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		221C81381A54C1D10000D6B6 /* robotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = robotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +99,41 @@
 		2259940E1A6B6DEC009BB1A4 /* scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard.png; sourceTree = "<group>"; };
 		225994101A6B6EA5009BB1A4 /* scannerTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scannerTab.png; sourceTree = "<group>"; };
 		225994121A6C2C09009BB1A4 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		225994141A6CAA27009BB1A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		225994171A6CAA91009BB1A4 /* RobotModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RobotModel.xcdatamodel; sourceTree = "<group>"; };
+		225994191A6D4D2F009BB1A4 /* RobotRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotRemote.h; sourceTree = "<group>"; };
+		2259941A1A6D4D41009BB1A4 /* RobotRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotRemote.m; sourceTree = "<group>"; };
+		2259941F1A6DE81C009BB1A4 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
+		225994201A6DE81C009BB1A4 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
+		225994221A6DE9DD009BB1A4 /* robots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "robots-Prefix.pch"; sourceTree = "<group>"; };
+		2259943E1A6F5544009BB1A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		225994401A6F554E009BB1A4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		225994421A6F555A009BB1A4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		225994441A6F5BB2009BB1A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		225994461A6F5BC8009BB1A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2259949B1A6F636D009BB1A4 /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
+		2259949C1A6F636D009BB1A4 /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
+		2259949D1A6F636D009BB1A4 /* ESTBeaconFirmwareVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareVO.h; sourceTree = "<group>"; };
+		2259949E1A6F636D009BB1A4 /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
+		2259949F1A6F636D009BB1A4 /* ESTBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconRegion.h; sourceTree = "<group>"; };
+		225994A01A6F636D009BB1A4 /* ESTBeaconUpdateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconUpdateConfig.h; sourceTree = "<group>"; };
+		225994A11A6F636D009BB1A4 /* ESTBeaconUpdateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconUpdateInfo.h; sourceTree = "<group>"; };
+		225994A21A6F636D009BB1A4 /* ESTBeaconVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconVO.h; sourceTree = "<group>"; };
+		225994A31A6F636D009BB1A4 /* ESTBulkUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBulkUpdater.h; sourceTree = "<group>"; };
+		225994A41A6F636D009BB1A4 /* ESTConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTConfig.h; sourceTree = "<group>"; };
+		225994A51A6F636D009BB1A4 /* ESTDateRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTDateRule.h; sourceTree = "<group>"; };
+		225994A61A6F636D009BB1A4 /* ESTDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTDefinitions.h; sourceTree = "<group>"; };
+		225994A71A6F636D009BB1A4 /* ESTFirmwareInfoVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTFirmwareInfoVO.h; sourceTree = "<group>"; };
+		225994A81A6F636D009BB1A4 /* ESTMotionRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTMotionRule.h; sourceTree = "<group>"; };
+		225994A91A6F636D009BB1A4 /* ESTNearable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTNearable.h; sourceTree = "<group>"; };
+		225994AA1A6F636D009BB1A4 /* ESTNearableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTNearableManager.h; sourceTree = "<group>"; };
+		225994AB1A6F636D009BB1A4 /* ESTNearableRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTNearableRule.h; sourceTree = "<group>"; };
+		225994AC1A6F636D009BB1A4 /* ESTOrientationRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTOrientationRule.h; sourceTree = "<group>"; };
+		225994AD1A6F636D009BB1A4 /* ESTProximityRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTProximityRule.h; sourceTree = "<group>"; };
+		225994AE1A6F636D009BB1A4 /* ESTRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTRule.h; sourceTree = "<group>"; };
+		225994AF1A6F636D009BB1A4 /* ESTTemperatureRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTTemperatureRule.h; sourceTree = "<group>"; };
+		225994B01A6F636D009BB1A4 /* ESTTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTTrigger.h; sourceTree = "<group>"; };
+		225994B11A6F636D009BB1A4 /* ESTTriggerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTTriggerManager.h; sourceTree = "<group>"; };
 		227192711A5C256100C9116E /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		227192731A5C281600C9116E /* title2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title2.png; sourceTree = "<group>"; };
 		2271927B1A5C2AC600C9116E /* gadget-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gadget-gray.png"; sourceTree = "<group>"; };
@@ -129,6 +175,13 @@
 		22B2034E1A5AD8B600249E31 /* MultiplePulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiplePulsingHaloLayer.h; path = ../../PulsingHalo/PulsingHalo/MultiplePulsingHaloLayer.h; sourceTree = "<group>"; };
 		22B2034F1A5AD8B600249E31 /* MultiplePulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiplePulsingHaloLayer.m; path = ../../PulsingHalo/PulsingHalo/MultiplePulsingHaloLayer.m; sourceTree = "<group>"; };
 		22B203531A5B7DE200249E31 /* gadget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gadget.png; sourceTree = "<group>"; };
+		22BDCAD91A6F74AC006D3A40 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK.a; path = "../iOS-SDK/EstimoteSDK/libEstimoteSDK.a"; sourceTree = "<group>"; };
+		22FFB78E1A70810D00A495E8 /* robots.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = robots.xcodeproj; sourceTree = "<group>"; };
+		22FFB7911A70814A00A495E8 /* IBMBluemix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMBluemix.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios-2/IBMBluemix.framework"; sourceTree = "<group>"; };
+		22FFB7931A70838500A495E8 /* robots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = robots.entitlements; sourceTree = "<group>"; };
+		22FFB7951A716E2000A495E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = robots/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22FFB7971A7177BC00A495E8 /* raygun-scanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raygun-scanner.png"; sourceTree = "<group>"; };
+		22FFB7991A7214B100A495E8 /* watson-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watson-full.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +189,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FFB7921A70814A00A495E8 /* IBMBluemix.framework in Frameworks */,
+				22BDCADD1A6F8659006D3A40 /* CoreBluetooth.framework in Frameworks */,
+				22BDCADC1A6F8159006D3A40 /* CoreLocation.framework in Frameworks */,
+				22BDCADA1A6F74AC006D3A40 /* libEstimoteSDK.a in Frameworks */,
+				225994451A6F5BB2009BB1A4 /* CoreGraphics.framework in Frameworks */,
+				225994471A6F5BC8009BB1A4 /* UIKit.framework in Frameworks */,
 				227196DF1A635F9900C9116E /* Foundation.framework in Frameworks */,
+				225994431A6F555A009BB1A4 /* SystemConfiguration.framework in Frameworks */,
+				225994151A6CAA27009BB1A4 /* CoreData.framework in Frameworks */,
 				227196D51A635B2C00C9116E /* IBMCloudCode.framework in Frameworks */,
 				227196D61A635B2C00C9116E /* IBMData.framework in Frameworks */,
 				227196D71A635B2C00C9116E /* IBMFileSync.framework in Frameworks */,
 				227196D91A635B2C00C9116E /* IBMPush.framework in Frameworks */,
 				22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */,
-				225993FF1A64342E009BB1A4 /* IBMBluemix.framework in Frameworks */,
 				22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +220,11 @@
 		221C81131A54C1D00000D6B6 = {
 			isa = PBXGroup;
 			children = (
+				22FFB7941A716E2000A495E8 /* Main.storyboard */,
+				225994991A6F636D009BB1A4 /* EstimoteSDK */,
+				2259941F1A6DE81C009BB1A4 /* Robot.h */,
+				225994201A6DE81C009BB1A4 /* Robot.m */,
+				225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */,
 				225994121A6C2C09009BB1A4 /* readme.md */,
 				227196DD1A635EED00C9116E /* Frameworks */,
 				227192811A5F5E2400C9116E /* Gauges */,
@@ -182,6 +247,7 @@
 		221C811E1A54C1D00000D6B6 /* robots */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB7931A70838500A495E8 /* robots.entitlements */,
 				227196DA1A635C0500C9116E /* Player.h */,
 				227196DB1A635C0500C9116E /* Player.m */,
 				22B203521A5B7DD400249E31 /* images */,
@@ -195,7 +261,6 @@
 				221C81271A54C1D00000D6B6 /* LoginViewController.m */,
 				221C81291A54C1D00000D6B6 /* ScannerViewController.h */,
 				221C812A1A54C1D00000D6B6 /* ScannerViewController.m */,
-				221C812C1A54C1D10000D6B6 /* Main.storyboard */,
 				221C812F1A54C1D10000D6B6 /* Images.xcassets */,
 				221C81311A54C1D10000D6B6 /* LaunchScreen.xib */,
 				221C811F1A54C1D00000D6B6 /* Supporting Files */,
@@ -203,6 +268,8 @@
 				225994031A6959C9009BB1A4 /* RobotViewController.m */,
 				225994051A695E43009BB1A4 /* ScoreboardViewController.h */,
 				225994061A695E43009BB1A4 /* ScoreboardViewController.m */,
+				225994191A6D4D2F009BB1A4 /* RobotRemote.h */,
+				2259941A1A6D4D41009BB1A4 /* RobotRemote.m */,
 			);
 			path = robots;
 			sourceTree = "<group>";
@@ -212,6 +279,7 @@
 			children = (
 				221C81201A54C1D00000D6B6 /* Info.plist */,
 				221C81211A54C1D00000D6B6 /* main.m */,
+				225994221A6DE9DD009BB1A4 /* robots-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,6 +299,44 @@
 				221C813D1A54C1D10000D6B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		225994991A6F636D009BB1A4 /* EstimoteSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2259949A1A6F636D009BB1A4 /* Headers */,
+			);
+			path = EstimoteSDK;
+			sourceTree = "<group>";
+		};
+		2259949A1A6F636D009BB1A4 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2259949B1A6F636D009BB1A4 /* ESTBeacon.h */,
+				2259949C1A6F636D009BB1A4 /* ESTBeaconDefinitions.h */,
+				2259949D1A6F636D009BB1A4 /* ESTBeaconFirmwareVO.h */,
+				2259949E1A6F636D009BB1A4 /* ESTBeaconManager.h */,
+				2259949F1A6F636D009BB1A4 /* ESTBeaconRegion.h */,
+				225994A01A6F636D009BB1A4 /* ESTBeaconUpdateConfig.h */,
+				225994A11A6F636D009BB1A4 /* ESTBeaconUpdateInfo.h */,
+				225994A21A6F636D009BB1A4 /* ESTBeaconVO.h */,
+				225994A31A6F636D009BB1A4 /* ESTBulkUpdater.h */,
+				225994A41A6F636D009BB1A4 /* ESTConfig.h */,
+				225994A51A6F636D009BB1A4 /* ESTDateRule.h */,
+				225994A61A6F636D009BB1A4 /* ESTDefinitions.h */,
+				225994A71A6F636D009BB1A4 /* ESTFirmwareInfoVO.h */,
+				225994A81A6F636D009BB1A4 /* ESTMotionRule.h */,
+				225994A91A6F636D009BB1A4 /* ESTNearable.h */,
+				225994AA1A6F636D009BB1A4 /* ESTNearableManager.h */,
+				225994AB1A6F636D009BB1A4 /* ESTNearableRule.h */,
+				225994AC1A6F636D009BB1A4 /* ESTOrientationRule.h */,
+				225994AD1A6F636D009BB1A4 /* ESTProximityRule.h */,
+				225994AE1A6F636D009BB1A4 /* ESTRule.h */,
+				225994AF1A6F636D009BB1A4 /* ESTTemperatureRule.h */,
+				225994B01A6F636D009BB1A4 /* ESTTrigger.h */,
+				225994B11A6F636D009BB1A4 /* ESTTriggerManager.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		227192811A5F5E2400C9116E /* Gauges */ = {
@@ -257,6 +363,15 @@
 		227196DD1A635EED00C9116E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB7911A70814A00A495E8 /* IBMBluemix.framework */,
+				22FFB78E1A70810D00A495E8 /* robots.xcodeproj */,
+				22BDCAD91A6F74AC006D3A40 /* libEstimoteSDK.a */,
+				225994461A6F5BC8009BB1A4 /* UIKit.framework */,
+				225994441A6F5BB2009BB1A4 /* CoreGraphics.framework */,
+				225994421A6F555A009BB1A4 /* SystemConfiguration.framework */,
+				225994401A6F554E009BB1A4 /* CoreBluetooth.framework */,
+				2259943E1A6F5544009BB1A4 /* CoreLocation.framework */,
+				225994141A6CAA27009BB1A4 /* CoreData.framework */,
 				225993FE1A64342E009BB1A4 /* IBMBluemix.framework */,
 				227196DE1A635F9900C9116E /* Foundation.framework */,
 				22B203421A57B20F00249E31 /* TwitterKit.framework */,
@@ -273,6 +388,8 @@
 		22B203521A5B7DD400249E31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB7991A7214B100A495E8 /* watson-full.png */,
+				22FFB7971A7177BC00A495E8 /* raygun-scanner.png */,
 				225994101A6B6EA5009BB1A4 /* scannerTab.png */,
 				2259940E1A6B6DEC009BB1A4 /* scoreboard.png */,
 				2259940A1A6B6A74009BB1A4 /* celeste-full.png */,
@@ -290,6 +407,11 @@
 				22B203531A5B7DE200249E31 /* gadget.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		22FFB78F1A70810D00A495E8 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +464,15 @@
 				TargetAttributes = {
 					221C811B1A54C1D00000D6B6 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = CT3Y8HLWZY;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					221C81371A54C1D10000D6B6 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -363,6 +494,12 @@
 			mainGroup = 221C81131A54C1D00000D6B6;
 			productRefGroup = 221C811D1A54C1D00000D6B6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 22FFB78F1A70810D00A495E8 /* Products */;
+					ProjectRef = 22FFB78E1A70810D00A495E8 /* robots.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				221C811B1A54C1D00000D6B6 /* robots */,
@@ -377,12 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */,
-				221C812E1A54C1D10000D6B6 /* Main.storyboard in Resources */,
 				2271929B1A5F7DDA00C9116E /* banner.png in Resources */,
 				2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */,
 				227192A31A602F3B00C9116E /* celeste.png in Resources */,
 				2271927E1A5F06BC00C9116E /* gadget-whole.png in Resources */,
 				227192A11A5F885100C9116E /* raygun.png in Resources */,
+				22FFB7981A7177BC00A495E8 /* raygun-scanner.png in Resources */,
 				227192801A5F147200C9116E /* bmlogo.png in Resources */,
 				227192981A5F719700C9116E /* tab_bar_icon_annotated.png in Resources */,
 				227192721A5C256100C9116E /* title.png in Resources */,
@@ -393,7 +530,9 @@
 				227192741A5C281600C9116E /* title2.png in Resources */,
 				22B203541A5B7DE200249E31 /* gadget.png in Resources */,
 				2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */,
+				22FFB79A1A7214B100A495E8 /* watson-full.png in Resources */,
 				2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */,
+				22FFB7961A716E2000A495E8 /* Main.storyboard in Resources */,
 				221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +571,10 @@
 				22B203501A5AD8B600249E31 /* PulsingHaloLayer.m in Sources */,
 				221C812B1A54C1D00000D6B6 /* ScannerViewController.m in Sources */,
 				227196DC1A635C0500C9116E /* Player.m in Sources */,
+				225994181A6CAA91009BB1A4 /* RobotModel.xcdatamodeld in Sources */,
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
+				2259941B1A6D4D41009BB1A4 /* RobotRemote.m in Sources */,
 				221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */,
 				225994131A6C2C09009BB1A4 /* readme.md in Sources */,
 				227192921A5F5E2400C9116E /* MSGradientArcLayer.m in Sources */,
@@ -444,6 +585,7 @@
 				227192901A5F5E2400C9116E /* MSAnnotatedGauge.m in Sources */,
 				22B203511A5AD8B600249E31 /* MultiplePulsingHaloLayer.m in Sources */,
 				225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */,
+				225994211A6DE81C009BB1A4 /* Robot.m in Sources */,
 				221C81221A54C1D00000D6B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,20 +609,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		221C812C1A54C1D10000D6B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				221C812D1A54C1D10000D6B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		221C81311A54C1D10000D6B6 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				221C81321A54C1D10000D6B6 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		22FFB7941A716E2000A495E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22FFB7951A716E2000A495E8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -565,7 +707,11 @@
 		221C81431A54C1D10000D6B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = robots/robots.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -574,21 +720,37 @@
 					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
 					"(4)",
 					2,
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					2,
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios-2",
 				);
 				INFOPLIST_FILE = robots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EstimoteSDK",
+					"$(PROJECT_DIR)",
+					"/Users/antonm/Desktop/code/iOS-SDK/EstimoteSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		221C81441A54C1D10000D6B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = robots/robots.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -597,14 +759,27 @@
 					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
 					"(4)",
 					2,
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios",
+					"(4)",
+					2,
+					"/Users/antonm/Downloads/ibm-bluemix-sdk-ios-2",
 				);
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../EstimoteSDK/Headers\"";
 				INFOPLIST_FILE = robots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EstimoteSDK",
+					"$(PROJECT_DIR)",
+					"/Users/antonm/Desktop/code/iOS-SDK/EstimoteSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -673,6 +848,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				225994171A6CAA91009BB1A4 /* RobotModel.xcdatamodel */,
+			);
+			currentVersion = 225994171A6CAA91009BB1A4 /* RobotModel.xcdatamodel */;
+			path = RobotModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 221C81141A54C1D00000D6B6 /* Project object */;
 }

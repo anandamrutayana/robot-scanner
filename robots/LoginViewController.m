@@ -14,9 +14,7 @@
 #import <IBMPush/IBMPush.h>
 #import <IBMData/IBMData.h>
 
-
 #import "Player.h"
-
 
 @interface LoginViewController ()
 
@@ -28,12 +26,17 @@
 
 - (void)viewDidLoad {
     
-    [IBMBluemix initializeWithApplicationId: @"4108d6c9-4b48-430f-a538-ab0c33b04f2e"
-                       andApplicationSecret: @"09467e9e5accd44d1186667563cec0f46b07a9e4"
-                        andApplicationRoute: @"robot.mybluemix.net"];
+    [super viewDidLoad];
     
-    [IBMData initializeService];
-
+    // ** Don't forget to add NSLocationWhenInUseUsageDescription in MyApp-Info.plist and give it a string
+    
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.delegate = self;
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+//    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+//        [self.locationManager requestWhenInUseAuthorization];
+//    }
+//    [self.locationManager startUpdatingLocation];
     
     TWTRLogInButton* newlogInButton =  [TWTRLogInButton
                                      buttonWithLogInCompletion:
@@ -100,12 +103,16 @@
                                      }];
     
     logInButton.logInCompletion = newlogInButton.logInCompletion;
-
     
-    [super viewDidLoad];
+    [self performSegueWithIdentifier:@"scanSegue" sender:self];
 
-    
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+// Location Manager Delegate Methods
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%@", [locations lastObject]);
 }
 
 - (void)didReceiveMemoryWarning {

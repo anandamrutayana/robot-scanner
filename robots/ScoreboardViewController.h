@@ -10,4 +10,6 @@
 
 @interface ScoreboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+- (NSData *)base64DataFromString;
+
 @end
