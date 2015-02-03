@@ -14,23 +14,29 @@
 // limitations under the License.
 //-------------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
-#import <IBMData/IBMData.h>
+#import "RemoteHelp.h"
 
-@interface RobotRemote : IBMDataObject <IBMDataObjectSpecialization>
+@implementation RemoteHelp
 
-@property(nonatomic, copy) NSMutableDictionary *robot;
+@dynamic help;
 
-@property(nonatomic, copy) NSString *name;
-@property(nonatomic, copy) NSString *clue;
-@property(nonatomic, copy) NSString *disruption;
-@property(nonatomic, copy) NSString *zone;
-@property(nonatomic, copy) NSString *mugshotBase64;
-@property(nonatomic, copy) NSString *mugshot;
-@property(nonatomic, copy) NSString *fullbody;
-@property(nonatomic, copy) NSString *fullBase64;
-@property(nonatomic, copy) NSString *beacon;
-@property(nonatomic, copy) NSString *primaryColor;
-@property(nonatomic, copy) NSString *secondaryColor;
+@dynamic title;
+@dynamic subtext;
+@dynamic image;
+@dynamic screen;
+@dynamic color;
+@dynamic size;
+@dynamic weight;
+@dynamic justification;
+
++(void) initialize
+{
+    [self registerSpecialization];
+}
+
++(NSString*) dataClassName
+{
+    return @"help";
+}
 
 @end

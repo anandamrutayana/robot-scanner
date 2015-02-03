@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Robot.h"
 
-@interface RobotViewController : UIViewController <UIAlertViewDelegate>{
+@interface RobotViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>{
     IBOutlet UILabel *progress;
     IBOutlet UITextField *disruptionCode;
     IBOutlet UIImageView *robotPic;
@@ -23,5 +23,8 @@
 @property (nonatomic, retain) UIImageView *robotPic;
 @property (nonatomic) NSNumber *beaconID;
 @property (nonatomic) Robot *thisRobot;
+
+- (void)textFieldDidChange;
+- (void) setStatus:(NSString*)status;
 
 @end

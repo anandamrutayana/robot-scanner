@@ -12,9 +12,12 @@
 #import "MultiplePulsingHaloLayer.h"
 #import "math.h"
 #import "ESTBeaconManager.h"
+#import "SBUIColor.h"
 
 #import <CoreLocation/CoreLocation.h>
-
+#import <AudioToolbox/AudioServices.h>
+#import "AppDelegate.h"
+#import "Player.h"
 
 #define kMaxRadius 160
 
@@ -50,6 +53,9 @@
 @synthesize proximity;
 @synthesize currentBeacon;
 
+AppDelegate *appDelegate;
+NSArray *robots;
+
 - (id)initWithBeacon:(ESTBeacon *)beacon
 {
     self = [super init];
@@ -65,11 +71,16 @@
 {
     [super viewDidLoad];
     
+    appDelegate = [UIApplication sharedApplication].delegate;
+    
+    robots = [appDelegate getRobots];
+    
+    
     [self.parentViewController.navigationItem setTitle:@"Title"];
     
 //    [UIColor colorWithRed:.41 green:.76 blue:.73 alpha:1];
     
-    self.THEME_COLOR = [UIColor colorWithRed:0.09 green:0.729 blue:0.608 alpha:1];
+    self.THEME_COLOR = [ UIColor colorwithHexString:@"7dcfb6" alpha:1];
     
     ///setup single halo layer
    PulsingHaloLayer *layer = [PulsingHaloLayer layer];
@@ -98,12 +109,7 @@
     self.gauges = @[self.annotatedGauge];
 
     
-    self.mytimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(updateGauge)
-                                   userInfo:nil
-                                    repeats:YES];
-    
+   
     self.stepper = 5;
     
     
@@ -225,13 +231,13 @@
 
 - (void)beaconManager:(ESTBeaconManager *)manager rangingBeaconsDidFailForRegion:(ESTBeaconRegion *)region withError:(NSError *)error
 {
-    UIAlertView* errorView = [[UIAlertView alloc] initWithTitle:@"Ranging error"
+  /*  UIAlertView* errorView = [[UIAlertView alloc] initWithTitle:@"Ranging error"
                                                         message:error.localizedDescription
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     
-    [errorView show];
+    [errorView show];*/
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager monitoringDidFailForRegion:(ESTBeaconRegion *)region withError:(NSError *)error
@@ -257,21 +263,77 @@
     double distance = [ firstBeacon.distance doubleValue ];
                        
     NSLog( @"RAW DISTANCE: %f", distance );
+
+    currentBeacon = [beacons firstObject];
     
-    if( distance > 0 ){
+    if( [self checkIfWanted:currentBeacon ] ){
+    
+        if( distance > 0 ){
         
-        if( distance > 2 ){
+            if( distance > 2 ){
     
-            proximity.text = [NSString stringWithFormat:@"%@", [self textForProximity:firstBeacon.proximity] ] ;
-    
-            self.annotatedGauge.value = self.annotatedGauge.maxValue - (int) distance;
-        }else{
+                proximity.text = [NSString stringWithFormat:@"%@", [self textForProximity:firstBeacon.proximity] ] ;
+                self.annotatedGauge.value = self.annotatedGauge.maxValue - (int) distance;
+        
+            }else{
             
-            currentBeacon = [beacons firstObject];
             
-          [self performSegueWithIdentifier:@"encounter" sender:self];
+                [self.beaconManager stopRangingBeaconsInRegion:self.beaconRegion];
+            
+            
+            
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            
+                [self performSegueWithIdentifier:@"encounter" sender:self];
+            }
         }
     }
+}
+
+- (BOOL) checkIfWanted:(ESTBeacon *)beacon{
+    
+    BOOL outcome = TRUE;
+    
+    Player* player = appDelegate.player;
+    
+    /* Seems a slow way of managing this ... */
+    
+    /* For all this player's robots ... */
+    
+    for( int count = 0; count < player.robots.count; count++ ){
+        
+        NSMutableDictionary *scoreData = [ player.robots objectAtIndex:count ];
+        
+        NSString* status = [scoreData objectForKey:@"status" ];
+        
+        /* Find the robots that this player has disrupted ... */
+        
+        if( [status isEqualToString: @"disrupted" ] || [status isEqualToString: @"failed" ]  ){
+            
+            NSString* robotName = [scoreData objectForKey:@"name" ];
+            
+            /* Check if the current beacon is one of the disrupted robots ... */
+            
+            for( int r = 0; r < robots.count; r++ ){
+                
+                Robot* robot = [ robots objectAtIndex:r ];
+                
+                if( [robotName isEqualToString: robot.name] ){
+                    
+                    if( [ robot.iBeacon isEqualToString: [ currentBeacon.minor stringValue ] ] ){
+                        
+                        NSLog( @"DISRUPTED ROBOT BLOCKED: %@", robot.name );
+                        
+                        outcome = FALSE;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    return outcome;
 }
 
 - (NSString *)textForProximity:(CLProximity)proximity
@@ -297,33 +359,6 @@
 - (void)beaconManager:(ESTBeaconManager *)manager didDiscoverBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region
 {
     self.beaconsArray = beacons;
-}
-
--(void)updateGauge
-{
-    
-    
-//    self.annotatedGauge.value = self.annotatedGauge.value + self.stepper;
-    
-//    proximity.text = [NSString stringWithFormat:@"Proximity: %d metres", 70 - (int)roundf( self.annotatedGauge.value )] ;
-    
-//    if( self.annotatedGauge.value == 45 ){
-//        
-//        self.annotatedGauge.value = 30;
-//        
-//        self.stepper = 10;
-//    }
-//    
-//    if( self.annotatedGauge.value == 20 ){
-//        
-//        self.annotatedGauge.value = 35;
-//    }
-//    
-//    if( self.annotatedGauge.value == 70 ){
-//        [self.mytimer invalidate]; self.mytimer = nil;
-//        
-//         [self performSegueWithIdentifier:@"encounter" sender:self];
-//    }
 }
 
 - (void)didReceiveMemoryWarning

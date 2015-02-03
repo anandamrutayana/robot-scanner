@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+
 
 @interface ScoreboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 - (NSData *)base64DataFromString;
+
+@property (nonatomic, retain) AppDelegate *appDelegate;
 
 @end

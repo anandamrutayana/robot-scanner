@@ -10,6 +10,7 @@
 #import "MSArcLayer.h"
 #import "MSGradientArcLayer.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SBUIColor.h"
 
 #define M_PI 3.14159265358979323846264338327950288
 #define DEGREES_TO_RADIANS(angle) (angle * (M_PI/180))
@@ -35,8 +36,8 @@
     
     _arcThickness = 50;
 
-    _backgroundArcFillColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
-    _backgroundArcStrokeColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
+    _backgroundArcFillColor = [UIColor colorwithHexString:@"7dcfb6" alpha:0.3 ];
+    _backgroundArcStrokeColor = [UIColor colorwithHexString:@"7dcfb6" alpha:0.3 ];
     
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
@@ -46,6 +47,8 @@
                                                                  0,
                                                                  needleWidth,
                                                                  width/2+4)];
+    
+    
     if ( [_needleView respondsToSelector:@selector(contentScaleFactor)] )
     {
         _needleView.contentScaleFactor = [[UIScreen mainScreen] scale];

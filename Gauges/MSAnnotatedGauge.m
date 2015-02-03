@@ -8,6 +8,7 @@
 
 #import "MSAnnotatedGauge.h"
 #import "MSArcLayer.h"
+#import "SBUIColor.h"
 
 @interface MSAnnotatedGauge ()
 @end
@@ -61,16 +62,16 @@
       
         CGPoint innerArcStartPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideBegining];
         _startRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, innerArcStartPoint.y+4, innerArcStartPoint.x, 14)];
-        _startRangeLabel.font = [UIFont systemFontOfSize:12];
-        _startRangeLabel.textColor = [UIColor lightGrayColor];
+        _startRangeLabel.font = [UIFont boldSystemFontOfSize:14];
+        _startRangeLabel.textColor = [UIColor colorwithHexString:@"f79256" alpha:1];
         _startRangeLabel.textAlignment = NSTextAlignmentRight;
         _startRangeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_startRangeLabel];
         
         CGPoint innerArcEndPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideEnd];
         _endRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(innerArcEndPoint.x, innerArcEndPoint.y+4, self.frame.size.width-innerArcEndPoint.x, 14)];
-        _endRangeLabel.font = [UIFont systemFontOfSize:12];
-        _endRangeLabel.textColor = [UIColor lightGrayColor];
+        _endRangeLabel.font = [UIFont boldSystemFontOfSize:14];
+        _endRangeLabel.textColor = [UIColor colorwithHexString:@"f79256" alpha:1];
         _endRangeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_endRangeLabel];
     }
@@ -93,7 +94,7 @@
     {
         [NSTimer scheduledTimerWithTimeInterval:.05
                                          target:self
-                                       selector:@selector(incrementTimerFired:)
+                                       selector:@selector(null)
                                        userInfo:nil
                                         repeats:YES];
     }
@@ -102,6 +103,8 @@
         [self updateValueLabelWithValue:self.value];
     }
 }
+
+
 //
 //- (void)setValue:(float)value animated:(BOOL)animated
 //{

@@ -19,11 +19,9 @@
 		2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940A1A6B6A74009BB1A4 /* celeste-full.png */; };
 		2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940E1A6B6DEC009BB1A4 /* scoreboard.png */; };
 		225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 225994101A6B6EA5009BB1A4 /* scannerTab.png */; };
-		225994131A6C2C09009BB1A4 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 225994121A6C2C09009BB1A4 /* readme.md */; };
 		225994151A6CAA27009BB1A4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994141A6CAA27009BB1A4 /* CoreData.framework */; };
 		225994181A6CAA91009BB1A4 /* RobotModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */; };
 		2259941B1A6D4D41009BB1A4 /* RobotRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 2259941A1A6D4D41009BB1A4 /* RobotRemote.m */; };
-		225994211A6DE81C009BB1A4 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994201A6DE81C009BB1A4 /* Robot.m */; };
 		225994431A6F555A009BB1A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994421A6F555A009BB1A4 /* SystemConfiguration.framework */; };
 		225994451A6F5BB2009BB1A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994441A6F5BB2009BB1A4 /* CoreGraphics.framework */; };
 		225994471A6F5BC8009BB1A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994461A6F5BC8009BB1A4 /* UIKit.framework */; };
@@ -63,6 +61,20 @@
 		22FFB7961A716E2000A495E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7941A716E2000A495E8 /* Main.storyboard */; };
 		22FFB7981A7177BC00A495E8 /* raygun-scanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7971A7177BC00A495E8 /* raygun-scanner.png */; };
 		22FFB79A1A7214B100A495E8 /* watson-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7991A7214B100A495E8 /* watson-full.png */; };
+		22FFB79C1A72AD1400A495E8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FFB79B1A72AD1400A495E8 /* AudioToolbox.framework */; };
+		22FFB79F1A742D4000A495E8 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB79E1A742D4000A495E8 /* PageContentViewController.m */; };
+		22FFB7A21A74AC8F00A495E8 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7A11A74AC8F00A495E8 /* EntryViewController.m */; };
+		22FFB7A71A74ACFF00A495E8 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7A31A74ACFF00A495E8 /* page1.png */; };
+		22FFB7A81A74ACFF00A495E8 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7A41A74ACFF00A495E8 /* page2.png */; };
+		22FFB7A91A74ACFF00A495E8 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7A51A74ACFF00A495E8 /* page3.png */; };
+		22FFB7AA1A74ACFF00A495E8 /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7A61A74ACFF00A495E8 /* page4.png */; };
+		22FFB7AD1A759B2D00A495E8 /* RemoteHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7AC1A759B2D00A495E8 /* RemoteHelp.m */; };
+		22FFB7B61A768FBA00A495E8 /* SBUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7B51A768FBA00A495E8 /* SBUIColor.m */; };
+		22FFB7BC1A76D9D900A495E8 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7BB1A76D9D900A495E8 /* Help.m */; };
+		22FFB7BF1A79E30700A495E8 /* ScoreCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7BE1A79E30700A495E8 /* ScoreCardData.m */; };
+		22FFB7C11A7C0E9000A495E8 /* dev.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7C01A7C0E9000A495E8 /* dev.jpg */; };
+		22FFB7C31A7DCF0800A495E8 /* raygun-aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */; };
+		22FFB7C61A7EBE4900A495E8 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7C51A7EBE4900A495E8 /* Robot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +115,6 @@
 		225994171A6CAA91009BB1A4 /* RobotModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RobotModel.xcdatamodel; sourceTree = "<group>"; };
 		225994191A6D4D2F009BB1A4 /* RobotRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotRemote.h; sourceTree = "<group>"; };
 		2259941A1A6D4D41009BB1A4 /* RobotRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotRemote.m; sourceTree = "<group>"; };
-		2259941F1A6DE81C009BB1A4 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
-		225994201A6DE81C009BB1A4 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
 		225994221A6DE9DD009BB1A4 /* robots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "robots-Prefix.pch"; sourceTree = "<group>"; };
 		2259943E1A6F5544009BB1A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		225994401A6F554E009BB1A4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -182,6 +192,27 @@
 		22FFB7951A716E2000A495E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = robots/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22FFB7971A7177BC00A495E8 /* raygun-scanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raygun-scanner.png"; sourceTree = "<group>"; };
 		22FFB7991A7214B100A495E8 /* watson-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watson-full.png"; sourceTree = "<group>"; };
+		22FFB79B1A72AD1400A495E8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		22FFB79D1A742D4000A495E8 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		22FFB79E1A742D4000A495E8 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		22FFB7A01A74AC8F00A495E8 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		22FFB7A11A74AC8F00A495E8 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
+		22FFB7A31A74ACFF00A495E8 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
+		22FFB7A41A74ACFF00A495E8 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		22FFB7A51A74ACFF00A495E8 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		22FFB7A61A74ACFF00A495E8 /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		22FFB7AB1A759B2D00A495E8 /* RemoteHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteHelp.h; sourceTree = "<group>"; };
+		22FFB7AC1A759B2D00A495E8 /* RemoteHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteHelp.m; sourceTree = "<group>"; };
+		22FFB7B41A768FBA00A495E8 /* SBUIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBUIColor.h; sourceTree = "<group>"; };
+		22FFB7B51A768FBA00A495E8 /* SBUIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBUIColor.m; sourceTree = "<group>"; };
+		22FFB7BA1A76D9D900A495E8 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
+		22FFB7BB1A76D9D900A495E8 /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
+		22FFB7BD1A79E30700A495E8 /* ScoreCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCardData.h; sourceTree = "<group>"; };
+		22FFB7BE1A79E30700A495E8 /* ScoreCardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreCardData.m; sourceTree = "<group>"; };
+		22FFB7C01A7C0E9000A495E8 /* dev.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dev.jpg; sourceTree = "<group>"; };
+		22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raygun-aqua.png"; sourceTree = "<group>"; };
+		22FFB7C41A7EBE4900A495E8 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
+		22FFB7C51A7EBE4900A495E8 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FFB79C1A72AD1400A495E8 /* AudioToolbox.framework in Frameworks */,
 				22FFB7921A70814A00A495E8 /* IBMBluemix.framework in Frameworks */,
 				22BDCADD1A6F8659006D3A40 /* CoreBluetooth.framework in Frameworks */,
 				22BDCADC1A6F8159006D3A40 /* CoreLocation.framework in Frameworks */,
@@ -220,11 +252,19 @@
 		221C81131A54C1D00000D6B6 = {
 			isa = PBXGroup;
 			children = (
+				22FFB7B41A768FBA00A495E8 /* SBUIColor.h */,
+				22FFB7B51A768FBA00A495E8 /* SBUIColor.m */,
+				22FFB7A01A74AC8F00A495E8 /* EntryViewController.h */,
+				22FFB7A11A74AC8F00A495E8 /* EntryViewController.m */,
 				22FFB7941A716E2000A495E8 /* Main.storyboard */,
+				22FFB79D1A742D4000A495E8 /* PageContentViewController.h */,
+				22FFB79E1A742D4000A495E8 /* PageContentViewController.m */,
 				225994991A6F636D009BB1A4 /* EstimoteSDK */,
-				2259941F1A6DE81C009BB1A4 /* Robot.h */,
-				225994201A6DE81C009BB1A4 /* Robot.m */,
 				225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */,
+				22FFB7C41A7EBE4900A495E8 /* Robot.h */,
+				22FFB7C51A7EBE4900A495E8 /* Robot.m */,
+				22FFB7BA1A76D9D900A495E8 /* Help.h */,
+				22FFB7BB1A76D9D900A495E8 /* Help.m */,
 				225994121A6C2C09009BB1A4 /* readme.md */,
 				227196DD1A635EED00C9116E /* Frameworks */,
 				227192811A5F5E2400C9116E /* Gauges */,
@@ -249,6 +289,8 @@
 			children = (
 				22FFB7931A70838500A495E8 /* robots.entitlements */,
 				227196DA1A635C0500C9116E /* Player.h */,
+				22FFB7BD1A79E30700A495E8 /* ScoreCardData.h */,
+				22FFB7BE1A79E30700A495E8 /* ScoreCardData.m */,
 				227196DB1A635C0500C9116E /* Player.m */,
 				22B203521A5B7DD400249E31 /* images */,
 				22B2034C1A5AD8B600249E31 /* PulsingHaloLayer.h */,
@@ -269,6 +311,8 @@
 				225994051A695E43009BB1A4 /* ScoreboardViewController.h */,
 				225994061A695E43009BB1A4 /* ScoreboardViewController.m */,
 				225994191A6D4D2F009BB1A4 /* RobotRemote.h */,
+				22FFB7AB1A759B2D00A495E8 /* RemoteHelp.h */,
+				22FFB7AC1A759B2D00A495E8 /* RemoteHelp.m */,
 				2259941A1A6D4D41009BB1A4 /* RobotRemote.m */,
 			);
 			path = robots;
@@ -363,6 +407,7 @@
 		227196DD1A635EED00C9116E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB79B1A72AD1400A495E8 /* AudioToolbox.framework */,
 				22FFB7911A70814A00A495E8 /* IBMBluemix.framework */,
 				22FFB78E1A70810D00A495E8 /* robots.xcodeproj */,
 				22BDCAD91A6F74AC006D3A40 /* libEstimoteSDK.a */,
@@ -388,6 +433,12 @@
 		22B203521A5B7DD400249E31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */,
+				22FFB7A31A74ACFF00A495E8 /* page1.png */,
+				22FFB7C01A7C0E9000A495E8 /* dev.jpg */,
+				22FFB7A41A74ACFF00A495E8 /* page2.png */,
+				22FFB7A51A74ACFF00A495E8 /* page3.png */,
+				22FFB7A61A74ACFF00A495E8 /* page4.png */,
 				22FFB7991A7214B100A495E8 /* watson-full.png */,
 				22FFB7971A7177BC00A495E8 /* raygun-scanner.png */,
 				225994101A6B6EA5009BB1A4 /* scannerTab.png */,
@@ -518,6 +569,8 @@
 				2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */,
 				227192A31A602F3B00C9116E /* celeste.png in Resources */,
 				2271927E1A5F06BC00C9116E /* gadget-whole.png in Resources */,
+				22FFB7C11A7C0E9000A495E8 /* dev.jpg in Resources */,
+				22FFB7AA1A74ACFF00A495E8 /* page4.png in Resources */,
 				227192A11A5F885100C9116E /* raygun.png in Resources */,
 				22FFB7981A7177BC00A495E8 /* raygun-scanner.png in Resources */,
 				227192801A5F147200C9116E /* bmlogo.png in Resources */,
@@ -527,10 +580,14 @@
 				227192991A5F719700C9116E /* tab_bar_icon_annotated@2x.png in Resources */,
 				221C81331A54C1D10000D6B6 /* LaunchScreen.xib in Resources */,
 				225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */,
+				22FFB7A71A74ACFF00A495E8 /* page1.png in Resources */,
 				227192741A5C281600C9116E /* title2.png in Resources */,
 				22B203541A5B7DE200249E31 /* gadget.png in Resources */,
+				22FFB7C31A7DCF0800A495E8 /* raygun-aqua.png in Resources */,
 				2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */,
+				22FFB7A81A74ACFF00A495E8 /* page2.png in Resources */,
 				22FFB79A1A7214B100A495E8 /* watson-full.png in Resources */,
+				22FFB7A91A74ACFF00A495E8 /* page3.png in Resources */,
 				2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */,
 				22FFB7961A716E2000A495E8 /* Main.storyboard in Resources */,
 				221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */,
@@ -575,17 +632,22 @@
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
 				2259941B1A6D4D41009BB1A4 /* RobotRemote.m in Sources */,
+				22FFB7A21A74AC8F00A495E8 /* EntryViewController.m in Sources */,
+				22FFB7B61A768FBA00A495E8 /* SBUIColor.m in Sources */,
 				221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */,
-				225994131A6C2C09009BB1A4 /* readme.md in Sources */,
 				227192921A5F5E2400C9116E /* MSGradientArcLayer.m in Sources */,
 				227192911A5F5E2400C9116E /* MSArcLayer.m in Sources */,
 				225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */,
 				227192931A5F5E2400C9116E /* MSNeedleView.m in Sources */,
 				227192951A5F5E2400C9116E /* MSSimpleGauge.m in Sources */,
 				227192901A5F5E2400C9116E /* MSAnnotatedGauge.m in Sources */,
+				22FFB7BF1A79E30700A495E8 /* ScoreCardData.m in Sources */,
+				22FFB7BC1A76D9D900A495E8 /* Help.m in Sources */,
+				22FFB7C61A7EBE4900A495E8 /* Robot.m in Sources */,
+				22FFB7AD1A759B2D00A495E8 /* RemoteHelp.m in Sources */,
 				22B203511A5AD8B600249E31 /* MultiplePulsingHaloLayer.m in Sources */,
 				225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */,
-				225994211A6DE81C009BB1A4 /* Robot.m in Sources */,
+				22FFB79F1A742D4000A495E8 /* PageContentViewController.m in Sources */,
 				221C81221A54C1D00000D6B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

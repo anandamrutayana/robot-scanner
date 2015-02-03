@@ -8,6 +8,9 @@
 
 #import "RobotViewController.h"
 #import "AppDelegate.h"
+#import "SBUIColor.h"
+#import <AudioToolbox/AudioServices.h>
+
 
 @interface RobotViewController ()
 
@@ -20,6 +23,8 @@
 @synthesize beaconID;
 @synthesize robotPic;
 
+AppDelegate * appDelegate;
+
 NSArray *robots;
 
 - (void)viewDidLoad {
@@ -27,14 +32,14 @@ NSArray *robots;
     // Do any additional setup after loading the view.
     
 //    progress=[[UILabel alloc] initWithFrame:CGRectMake(80, 15, 100, 50)];
-    progress.textColor=[UIColor colorWithRed:0.82 green:0.337 blue:0 alpha:1]; /*#d15600*/
+    progress.textColor=[UIColor colorwithHexString:@"00B2CA" alpha:1]; /*#d15600*/
     [progress setText:@"Time : 0:30"];
     progress.backgroundColor=[UIColor clearColor];
     currMinute=0;
     currSeconds=30;
     
     
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate = [UIApplication sharedApplication].delegate;
     
     robots = [appDelegate getRobots];
     
@@ -58,6 +63,7 @@ NSArray *robots;
             break;
         }
     }
+    
     
     [ self start ];
 }
@@ -202,16 +208,28 @@ NSArray *robots;
         {
             currMinute-=1;
             currSeconds=59;
-        }
-        else if(currSeconds>0)
+        
+        }else if(currSeconds>0)
         {
             currSeconds-=1;
         }
+        
         if(currMinute>-1)
             [progress setText:[NSString stringWithFormat:@"%@%d%@%02d",@"Time : ",currMinute,@":",currSeconds]];
     }
     else
     {
+        
+        [ self setStatus:@"failed" ];
+        
+        [[appDelegate.player save] continueWithBlock:^id(BFTask *task) {
+            if(task.error) {
+                NSLog(@"updateItem failed with error: %@", task.error);
+            }
+            return nil;
+        }];
+
+        
         [timer invalidate];
         
         NSString* title = [NSString stringWithFormat:@"%@ caught you!", self.thisRobot.name ];
@@ -221,6 +239,8 @@ NSArray *robots;
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
+        
+        
         [alert show];
     }
 }
@@ -230,6 +250,115 @@ NSArray *robots;
     [ self performSegueWithIdentifier:@"returnToScanner" sender:self];
 }
 
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    if (textField == self.disruptionCode) {
+    
+    textField.text = @"";
+    
+        NSLog( @"text:%@", textField.text );
+//        textField.text = @"Don't edit me!";
+//    }
+}
+
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    NSUInteger len = [newString length];
+    
+    if( len == 4 ){
+    
+        if( [newString isEqualToString:[ self.thisRobot.disruption stringValue ] ] ){
+        
+            NSString* title = [NSString stringWithFormat:@"Well done!" ];
+        
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title
+                                    message: [ NSString stringWithFormat:@"You've disrupted %@ .", self.thisRobot.name ]
+                                    delegate:self
+                                    cancelButtonTitle:@"OK"
+                                    otherButtonTitles:nil];
+            
+            
+            [ self setStatus:@"disrupted" ];
+            
+            [[appDelegate.player save] continueWithBlock:^id(BFTask *task) {
+                if(task.error) {
+                    NSLog(@"updateItem failed with error: %@", task.error);
+                }
+                return nil;
+            }];
+                    
+            
+            [timer invalidate];
+            [alert show];
+                    
+        }else{
+            
+            /* they've entered the wrong four digit code */
+            
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            textField.text = nil;
+            return NO;
+        }
+    }
+
+    return YES;
+}
+
+
+- (void) setStatus:(NSString*)status {
+    
+    for( int count = 0; count < appDelegate.player.robots.count; count++ ){
+
+        NSMutableDictionary* robotStatus = [ appDelegate.player.robots objectAtIndex:count ];
+        
+        if( [ [ robotStatus objectForKey: @"name" ] isEqualToString: self.thisRobot.name ] ){
+            
+            [ robotStatus setObject:status forKey: @"status" ];
+            
+            [ robotStatus setObject:[ self timeStamp ] forKey:@"timestamp"];
+            
+            NSString* seconds = [NSString stringWithFormat:@"%d", currSeconds];
+            
+            if( [status isEqualToString:@"failed" ] ){
+
+                seconds = @"0";
+            }
+            
+            [ robotStatus setObject: seconds forKey:@"disruptionSeconds"];
+            
+            break;
+        }
+    }
+}
+
+- (NSString *) timeStamp {
+    return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+}
+
+
+-(void)textFieldDidChange:(UITextField *)theTextField
+{
+    NSLog( @"text changed: %@", theTextField.text);
+}
+
+- (BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    
+    BOOL outcome = NO;
+    
+//    if( textField.text.length > 4 ){
+//        outcome = YES;
+//    }
+//    
+//       if( [textField.text isEqualToString: [ self.thisRobot.disruption stringValue ] ] ) {
+//        return YES;
+//    }
+    return outcome;
+}
 
 /*
 #pragma mark - Navigation

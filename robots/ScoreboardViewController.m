@@ -7,8 +7,8 @@
 //
 
 #import "ScoreboardViewController.h"
-#import "AppDelegate.h"
 #import "Robot.h"
+#import "SBUIColor.h"
 
 @interface ScoreboardViewController ()
 
@@ -16,19 +16,17 @@
 
 @implementation ScoreboardViewController
 
- NSArray *tableData;
+@synthesize appDelegate;
+
+NSArray *tableData;
 
 NSArray *robots;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-
-    
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    
+      
+    appDelegate = [UIApplication sharedApplication].delegate;
     robots = [appDelegate getRobots];
     
 }
@@ -40,33 +38,9 @@ NSArray *robots;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    tableView.layer.borderColor = [UIColor colorwithHexString:@"00b2ca" alpha:1 ].CGColor;
     return [robots count];
 }
-
-/*
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    Robot *robot = [robots objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = robot.name;
-    
-    NSData* imageData = [ self base64DataFromString: robot.mugshot ];
-    
-    cell.imageView.image = [UIImage imageWithData:imageData];
-    
-    return cell;
-}
- 
- */
 
  - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath {
      
@@ -75,7 +49,11 @@ NSArray *robots;
      Robot *robot = [robots objectAtIndex:indexPath.row];
      
      UILabel *lblName = (UILabel *)[cell viewWithTag:100];
-      [lblName setText: robot.name];
+     [lblName setText: robot.name];
+     lblName.textColor = [UIColor colorwithHexString: robot.primaryColor alpha:1 ];
+     
+     UILabel *lblPoints = (UILabel *)[cell viewWithTag:900];
+     lblPoints.textColor = [UIColor colorwithHexString: robot.primaryColor alpha:1 ];
      
      NSData* imageData = [ self base64DataFromString: robot.mugshot ];
      
@@ -83,6 +61,40 @@ NSArray *robots;
      
      imageView.image = [UIImage imageWithData:imageData];
      
+     Player* player = self.appDelegate.player;
+     
+     /* Seems a slow way of managing this ... */
+     
+     for( int count = 0; count < player.robots.count; count++ ){
+         
+         NSMutableDictionary *scoreData = [ player.robots objectAtIndex:count ];
+         
+         NSString* robotName = [scoreData objectForKey:@"name" ];
+         
+         if( [robotName isEqualToString: robot.name ]  ){
+             
+             NSString* status = [scoreData objectForKey:@"status"];
+             
+             UILabel *statusLabel = (UILabel *)[cell viewWithTag:500];
+             [statusLabel setText: status ];
+             
+             statusLabel.textColor = [UIColor colorwithHexString: robot.primaryColor alpha:1 ];
+             
+             NSString* score = @"0";
+             
+             if( [ status isEqualToString:@"disrupted"] ){
+                 score = @"1";
+             }
+             
+             UILabel *pointsLabel = (UILabel *)[cell viewWithTag:700];
+             [pointsLabel setText: score ];
+             pointsLabel.textColor = [UIColor colorwithHexString: robot.primaryColor alpha:1 ];
+             
+             break;
+         }
+     }
+     
+     [cell.contentView.layer setBorderColor:[UIColor colorwithHexString: robot.primaryColor alpha:1 ].CGColor];
      
      return cell; }
 

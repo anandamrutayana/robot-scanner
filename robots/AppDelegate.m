@@ -16,11 +16,13 @@
 
 #import <CoreData/CoreData.h>
 
+#import "RemoteHelp.h"
+#import "Help.h"
 #import "RobotRemote.h"
 #import "Robot.h"
 #import "ESTBeaconManager.h"
 #import "ESTConfig.h"
-
+#import "SBUIColor.h"
 
 @interface AppDelegate ()
 
@@ -37,6 +39,15 @@
     
     [ESTConfig setupAppID:nil andAppToken:nil];
     
+    // Override point for customization after application launch.
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor colorwithHexString:@"b2e7ef" alpha:1];
+    pageControl.currentPageIndicatorTintColor = [UIColor colorwithHexString:@"00b2ca" alpha:1];
+    pageControl.backgroundColor = [UIColor whiteColor];
+
+    
+   
+    
     
 //    UINavigationController *navController = [[UINavigationController alloc]
 //                                             initWithRootViewController:self.viewController];
@@ -48,11 +59,13 @@
     [Fabric with:@[[Twitter sharedInstance]]];
     
     
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.141 green:0.553 blue:0.729 alpha:1] /*#248dba*/];
-    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor] ];
+    [[UITabBar appearance] setTintColor: [UIColor colorwithHexString:@"00B2CA" alpha:1] ];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorwithHexString:@"e5f7f9" alpha:1] ];
+    self.viewController.tabBarController.tabBar.layer.borderColor = (__bridge CGColorRef)([UIColor colorwithHexString:@"00B2CA" alpha:1]);
+    
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.004 green:0.573 blue:0.71 alpha:1] /*#0192b5*/ ];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorwithHexString:@"00B2CA" alpha:1] ];
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     
@@ -60,7 +73,7 @@
                        andApplicationSecret: @"09467e9e5accd44d1186667563cec0f46b07a9e4"
                         andApplicationRoute: @"robot.mybluemix.net"];
     
-    [IBMData initializeService];    
+    [IBMData initializeService];
     
     IBMQuery *qry = [RobotRemote query];
     
@@ -68,9 +81,6 @@
         if(task.error) {
             NSLog(@"listItems failed with error: %@", task.error);
         } else {
-            
-            
-            BOOL robotsFound = false;
             
             NSMutableArray* robotList = [NSMutableArray arrayWithArray: task.result];
             
@@ -87,6 +97,13 @@
                 newRobot.mugshot = remoteRobot.mugshotBase64;
                 newRobot.fullshot = remoteRobot.fullBase64;
                 newRobot.iBeacon = remoteRobot.beacon;
+                newRobot.primaryColor = remoteRobot.primaryColor;
+                newRobot.secondaryColor = remoteRobot.secondaryColor;
+                
+                NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+                f.numberStyle = NSNumberFormatterDecimalStyle;
+                
+                newRobot.disruption = [ f numberFromString: remoteRobot.disruption  ];
             }
         }
     
@@ -97,6 +114,11 @@
     return YES;
 }
 
+
+-(Player*) getPlayer{
+    return self.player;
+}
+
 -(NSArray*)getRobots
 {
     // initializing NSFetchRequest
@@ -104,6 +126,24 @@
     
     //Setting Entity to be Queried
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Robot"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    // Returning Fetched Records
+    return fetchedRecords;
+}
+
+-(NSArray*)getHelp
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Help"
                                               inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     NSError* error;

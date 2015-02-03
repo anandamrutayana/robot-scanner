@@ -2,7 +2,7 @@
 //  Robot.m
 //  robots
 //
-//  Created by Anton McConville on 2015-01-19.
+//  Created by Anton McConville on 2015-02-01.
 //  Copyright (c) 2015 IBM. All rights reserved.
 //
 
@@ -11,13 +11,15 @@
 
 @implementation Robot
 
-@dynamic name;
-@dynamic iBeacon;
-@dynamic disruption;
-@dynamic techZone;
-@dynamic clue;
-@dynamic mugshot;
-@dynamic fullshot;
 @dynamic about;
+@dynamic clue;
+@dynamic disruption;
+@dynamic fullshot;
+@dynamic iBeacon;
+@dynamic mugshot;
+@dynamic name;
+@dynamic techZone;
+@dynamic primaryColor;
+@dynamic secondaryColor;
 
 @end

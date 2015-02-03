@@ -7,12 +7,13 @@
 //
 
 #import "MSNeedleView.h"
+#import "SBUIColor.h"
 
 @implementation MSNeedleView
 
 - (void)setup
 {
-    _needleColor = [UIColor blackColor];
+    _needleColor = [UIColor colorwithHexString:@"f79256" alpha:1];
 }
 
 - (id)initWithFrame:(CGRect)frame

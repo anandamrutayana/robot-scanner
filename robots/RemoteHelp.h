@@ -17,20 +17,17 @@
 #import <Foundation/Foundation.h>
 #import <IBMData/IBMData.h>
 
-@interface RobotRemote : IBMDataObject <IBMDataObjectSpecialization>
+@interface RemoteHelp : IBMDataObject <IBMDataObjectSpecialization>
 
-@property(nonatomic, copy) NSMutableDictionary *robot;
+@property(nonatomic, copy) NSMutableDictionary *help;
 
-@property(nonatomic, copy) NSString *name;
-@property(nonatomic, copy) NSString *clue;
-@property(nonatomic, copy) NSString *disruption;
-@property(nonatomic, copy) NSString *zone;
-@property(nonatomic, copy) NSString *mugshotBase64;
-@property(nonatomic, copy) NSString *mugshot;
-@property(nonatomic, copy) NSString *fullbody;
-@property(nonatomic, copy) NSString *fullBase64;
-@property(nonatomic, copy) NSString *beacon;
-@property(nonatomic, copy) NSString *primaryColor;
-@property(nonatomic, copy) NSString *secondaryColor;
+@property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSString *subtext;
+@property(nonatomic, copy) NSString *image;
+@property(nonatomic, copy) NSString *screen;
+@property(nonatomic, copy) NSString *color;
+@property(nonatomic, copy) NSString *size;
+@property(nonatomic, copy) NSString *weight;
+@property(nonatomic, copy) NSString *justification;
 
 @end
