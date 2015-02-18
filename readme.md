@@ -1,6 +1,8 @@
 Robot Scanner
 -------------
 
+![Alt text](story.jpg "Optional title")
+
 Robot Hunt is a physically interactive game in which players at a conference can use their iOS device to 'scan' for 'robots' in the conference area. 
 
 The app, and the game require the player's device to be connected to the internet in order to login and play.
@@ -15,4 +17,8 @@ No robots are harmed during gameplay ... just disrupted briefly.
 
 The app was designed and is intended to be used at the upcoming IBM InterConnect 2015 [ Feb 22 - 26 ] Conference, and will be evolved for other IBM conferences and events in the future.
 
-This iOS code is twinned with a mobile back end app: 
+- - - - - - -
+
+This iOS code is twinned with a [mobile back end app](https://hub.jazz.net/project/antonm/robot/overview "Robot Hunt Back End") 
+
+It also depends on the IBM Mobile First Frameworks. For [more information please see]( http://www.ibm.com/developerworks/library/mo-ios-mobiledata-app/ )

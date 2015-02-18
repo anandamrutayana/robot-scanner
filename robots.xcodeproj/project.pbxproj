@@ -47,6 +47,7 @@
 		227196D91A635B2C00C9116E /* IBMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D41A635B2C00C9116E /* IBMPush.framework */; };
 		227196DC1A635C0500C9116E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 227196DB1A635C0500C9116E /* Player.m */; };
 		227196DF1A635F9900C9116E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196DE1A635F9900C9116E /* Foundation.framework */; };
+		2271FD421A950121007B6BBD /* story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2271FD411A950121007B6BBD /* story.jpg */; };
 		22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203421A57B20F00249E31 /* TwitterKit.framework */; };
 		22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22B203431A57B20F00249E31 /* TwitterKitResources.bundle */; };
 		22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203441A57B20F00249E31 /* Fabric.framework */; };
@@ -184,6 +185,7 @@
 		227196DA1A635C0500C9116E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../sbclient/SBI/Player.h; sourceTree = "<group>"; };
 		227196DB1A635C0500C9116E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../../sbclient/SBI/Player.m; sourceTree = "<group>"; };
 		227196DE1A635F9900C9116E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2271FD411A950121007B6BBD /* story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = story.jpg; sourceTree = "<group>"; };
 		22B203421A57B20F00249E31 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		22B203431A57B20F00249E31 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		22B203441A57B20F00249E31 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		221C81131A54C1D00000D6B6 = {
 			isa = PBXGroup;
 			children = (
+				2271FD411A950121007B6BBD /* story.jpg */,
 				22FFB7B41A768FBA00A495E8 /* SBUIColor.h */,
 				22FFB7B51A768FBA00A495E8 /* SBUIColor.m */,
 				22FFB7A01A74AC8F00A495E8 /* EntryViewController.h */,
@@ -602,6 +605,7 @@
 				22FFB7DB1A87036000A495E8 /* robot-icon-120.png in Resources */,
 				227192801A5F147200C9116E /* bmlogo.png in Resources */,
 				227192981A5F719700C9116E /* tab_bar_icon_annotated.png in Resources */,
+				2271FD421A950121007B6BBD /* story.jpg in Resources */,
 				227192721A5C256100C9116E /* title.png in Resources */,
 				22FFB7D01A851F0500A495E8 /* scoreTab.png in Resources */,
 				2271929F1A5F814700C9116E /* robot-banner-big.png in Resources */,
