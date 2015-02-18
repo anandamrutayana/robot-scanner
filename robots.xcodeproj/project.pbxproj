@@ -17,7 +17,6 @@
 		225994041A6959C9009BB1A4 /* RobotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994031A6959C9009BB1A4 /* RobotViewController.m */; };
 		225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225994061A695E43009BB1A4 /* ScoreboardViewController.m */; };
 		2259940B1A6B6A74009BB1A4 /* celeste-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940A1A6B6A74009BB1A4 /* celeste-full.png */; };
-		2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259940E1A6B6DEC009BB1A4 /* scoreboard.png */; };
 		225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 225994101A6B6EA5009BB1A4 /* scannerTab.png */; };
 		225994151A6CAA27009BB1A4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225994141A6CAA27009BB1A4 /* CoreData.framework */; };
 		225994181A6CAA91009BB1A4 /* RobotModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225994161A6CAA91009BB1A4 /* RobotModel.xcdatamodeld */; };
@@ -75,6 +74,15 @@
 		22FFB7C11A7C0E9000A495E8 /* dev.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7C01A7C0E9000A495E8 /* dev.jpg */; };
 		22FFB7C31A7DCF0800A495E8 /* raygun-aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */; };
 		22FFB7C61A7EBE4900A495E8 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7C51A7EBE4900A495E8 /* Robot.m */; };
+		22FFB7C81A809C0200A495E8 /* slash-iphone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7C71A809C0200A495E8 /* slash-iphone6.png */; };
+		22FFB7CC1A847AF300A495E8 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7CB1A847AF300A495E8 /* loading.png */; };
+		22FFB7CE1A8518E800A495E8 /* scoreboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7CD1A8518E800A495E8 /* scoreboard.png */; };
+		22FFB7D01A851F0500A495E8 /* scoreTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7CF1A851F0500A495E8 /* scoreTab.png */; };
+		22FFB7D31A86D8F300A495E8 /* ConfigData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFB7D21A86D8F300A495E8 /* ConfigData.m */; };
+		22FFB7D61A87023000A495E8 /* robot-icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7D41A87023000A495E8 /* robot-icon-152.png */; };
+		22FFB7D71A87023000A495E8 /* robot-icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7D51A87023000A495E8 /* robot-icon-76.png */; };
+		22FFB7D91A87026F00A495E8 /* robot-icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7D81A87026F00A495E8 /* robot-icon-60.png */; };
+		22FFB7DB1A87036000A495E8 /* robot-icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7DA1A87036000A495E8 /* robot-icon-120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +116,6 @@
 		225994051A695E43009BB1A4 /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
 		225994061A695E43009BB1A4 /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 		2259940A1A6B6A74009BB1A4 /* celeste-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celeste-full.png"; sourceTree = "<group>"; };
-		2259940E1A6B6DEC009BB1A4 /* scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard.png; sourceTree = "<group>"; };
 		225994101A6B6EA5009BB1A4 /* scannerTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scannerTab.png; sourceTree = "<group>"; };
 		225994121A6C2C09009BB1A4 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		225994141A6CAA27009BB1A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -213,6 +220,16 @@
 		22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raygun-aqua.png"; sourceTree = "<group>"; };
 		22FFB7C41A7EBE4900A495E8 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
 		22FFB7C51A7EBE4900A495E8 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
+		22FFB7C71A809C0200A495E8 /* slash-iphone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slash-iphone6.png"; sourceTree = "<group>"; };
+		22FFB7CB1A847AF300A495E8 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		22FFB7CD1A8518E800A495E8 /* scoreboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard.png; sourceTree = "<group>"; };
+		22FFB7CF1A851F0500A495E8 /* scoreTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreTab.png; sourceTree = "<group>"; };
+		22FFB7D11A86D8F300A495E8 /* ConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigData.h; sourceTree = "<group>"; };
+		22FFB7D21A86D8F300A495E8 /* ConfigData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigData.m; sourceTree = "<group>"; };
+		22FFB7D41A87023000A495E8 /* robot-icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-152.png"; sourceTree = "<group>"; };
+		22FFB7D51A87023000A495E8 /* robot-icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-76.png"; sourceTree = "<group>"; };
+		22FFB7D81A87026F00A495E8 /* robot-icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-60.png"; sourceTree = "<group>"; };
+		22FFB7DA1A87036000A495E8 /* robot-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +316,8 @@
 				22B2034F1A5AD8B600249E31 /* MultiplePulsingHaloLayer.m */,
 				221C81231A54C1D00000D6B6 /* AppDelegate.h */,
 				221C81241A54C1D00000D6B6 /* AppDelegate.m */,
+				22FFB7D11A86D8F300A495E8 /* ConfigData.h */,
+				22FFB7D21A86D8F300A495E8 /* ConfigData.m */,
 				221C81261A54C1D00000D6B6 /* LoginViewController.h */,
 				221C81271A54C1D00000D6B6 /* LoginViewController.m */,
 				221C81291A54C1D00000D6B6 /* ScannerViewController.h */,
@@ -433,6 +452,14 @@
 		22B203521A5B7DD400249E31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				22FFB7DA1A87036000A495E8 /* robot-icon-120.png */,
+				22FFB7D81A87026F00A495E8 /* robot-icon-60.png */,
+				22FFB7D41A87023000A495E8 /* robot-icon-152.png */,
+				22FFB7D51A87023000A495E8 /* robot-icon-76.png */,
+				22FFB7CF1A851F0500A495E8 /* scoreTab.png */,
+				22FFB7CD1A8518E800A495E8 /* scoreboard.png */,
+				22FFB7CB1A847AF300A495E8 /* loading.png */,
+				22FFB7C71A809C0200A495E8 /* slash-iphone6.png */,
 				22FFB7C21A7DCF0800A495E8 /* raygun-aqua.png */,
 				22FFB7A31A74ACFF00A495E8 /* page1.png */,
 				22FFB7C01A7C0E9000A495E8 /* dev.jpg */,
@@ -442,7 +469,6 @@
 				22FFB7991A7214B100A495E8 /* watson-full.png */,
 				22FFB7971A7177BC00A495E8 /* raygun-scanner.png */,
 				225994101A6B6EA5009BB1A4 /* scannerTab.png */,
-				2259940E1A6B6DEC009BB1A4 /* scoreboard.png */,
 				2259940A1A6B6A74009BB1A4 /* celeste-full.png */,
 				227192A21A602F3B00C9116E /* celeste.png */,
 				227192A01A5F885100C9116E /* raygun.png */,
@@ -566,18 +592,21 @@
 			files = (
 				22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */,
 				2271929B1A5F7DDA00C9116E /* banner.png in Resources */,
-				2259940F1A6B6DEC009BB1A4 /* scoreboard.png in Resources */,
 				227192A31A602F3B00C9116E /* celeste.png in Resources */,
 				2271927E1A5F06BC00C9116E /* gadget-whole.png in Resources */,
 				22FFB7C11A7C0E9000A495E8 /* dev.jpg in Resources */,
 				22FFB7AA1A74ACFF00A495E8 /* page4.png in Resources */,
+				22FFB7CE1A8518E800A495E8 /* scoreboard.png in Resources */,
 				227192A11A5F885100C9116E /* raygun.png in Resources */,
 				22FFB7981A7177BC00A495E8 /* raygun-scanner.png in Resources */,
+				22FFB7DB1A87036000A495E8 /* robot-icon-120.png in Resources */,
 				227192801A5F147200C9116E /* bmlogo.png in Resources */,
 				227192981A5F719700C9116E /* tab_bar_icon_annotated.png in Resources */,
 				227192721A5C256100C9116E /* title.png in Resources */,
+				22FFB7D01A851F0500A495E8 /* scoreTab.png in Resources */,
 				2271929F1A5F814700C9116E /* robot-banner-big.png in Resources */,
 				227192991A5F719700C9116E /* tab_bar_icon_annotated@2x.png in Resources */,
+				22FFB7CC1A847AF300A495E8 /* loading.png in Resources */,
 				221C81331A54C1D10000D6B6 /* LaunchScreen.xib in Resources */,
 				225994111A6B6EA5009BB1A4 /* scannerTab.png in Resources */,
 				22FFB7A71A74ACFF00A495E8 /* page1.png in Resources */,
@@ -588,7 +617,11 @@
 				22FFB7A81A74ACFF00A495E8 /* page2.png in Resources */,
 				22FFB79A1A7214B100A495E8 /* watson-full.png in Resources */,
 				22FFB7A91A74ACFF00A495E8 /* page3.png in Resources */,
+				22FFB7D71A87023000A495E8 /* robot-icon-76.png in Resources */,
+				22FFB7D61A87023000A495E8 /* robot-icon-152.png in Resources */,
 				2271927C1A5C2AC600C9116E /* gadget-gray.png in Resources */,
+				22FFB7C81A809C0200A495E8 /* slash-iphone6.png in Resources */,
+				22FFB7D91A87026F00A495E8 /* robot-icon-60.png in Resources */,
 				22FFB7961A716E2000A495E8 /* Main.storyboard in Resources */,
 				221C81301A54C1D10000D6B6 /* Images.xcassets in Resources */,
 			);
@@ -632,6 +665,7 @@
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
 				2259941B1A6D4D41009BB1A4 /* RobotRemote.m in Sources */,
+				22FFB7D31A86D8F300A495E8 /* ConfigData.m in Sources */,
 				22FFB7A21A74AC8F00A495E8 /* EntryViewController.m in Sources */,
 				22FFB7B61A768FBA00A495E8 /* SBUIColor.m in Sources */,
 				221C81281A54C1D00000D6B6 /* LoginViewController.m in Sources */,
@@ -770,7 +804,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = robots/robots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -802,6 +837,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -809,7 +845,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = robots/robots.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -842,6 +879,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

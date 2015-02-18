@@ -14,11 +14,14 @@
 
 @interface ScannerViewController : UIViewController{
     IBOutlet UILabel *proximity;
+    IBOutlet UIImageView *rayGun;
    }
 @property (nonatomic) MSAnnotatedGauge *annotatedGauge;
 @property (nonatomic) NSArray *gauges;
 @property (nonatomic) NSTimer *mytimer;
 @property (nonatomic, retain) UILabel *proximity;
+@property (nonatomic, retain) UIImageView *rayGun;
+
 @property (nonatomic) int stepper;
 @property (nonatomic) UIColor* THEME_COLOR;
 

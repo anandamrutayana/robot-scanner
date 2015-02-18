@@ -23,6 +23,7 @@
 #import "ESTBeaconManager.h"
 #import "ESTConfig.h"
 #import "SBUIColor.h"
+#import "ConfigData.h"
 
 @interface AppDelegate ()
 
@@ -44,15 +45,6 @@
     pageControl.pageIndicatorTintColor = [UIColor colorwithHexString:@"b2e7ef" alpha:1];
     pageControl.currentPageIndicatorTintColor = [UIColor colorwithHexString:@"00b2ca" alpha:1];
     pageControl.backgroundColor = [UIColor whiteColor];
-
-    
-   
-    
-    
-//    UINavigationController *navController = [[UINavigationController alloc]
-//                                             initWithRootViewController:self.viewController];
-//    self.window.rootViewController = navController;
-//    [self.window makeKeyAndVisible];
     
     [[Twitter sharedInstance] startWithConsumerKey:@"PaUzPfdUlO1OroMXEb3isT6b5"
                                     consumerSecret:@"8V7uvTzfiet2CZ85GG3EK7UueJRPGfiZIB9iYJceyj5RrOA2I3"];
@@ -69,9 +61,9 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     
-    [IBMBluemix initializeWithApplicationId: @"4108d6c9-4b48-430f-a538-ab0c33b04f2e"
-                       andApplicationSecret: @"09467e9e5accd44d1186667563cec0f46b07a9e4"
-                        andApplicationRoute: @"robot.mybluemix.net"];
+    [IBMBluemix initializeWithApplicationId: @"YOUR APP ID"
+                       andApplicationSecret: @"YOUR APP SECRET"
+                        andApplicationRoute: @"YOUR APP URL" ];
     
     [IBMData initializeService];
     
@@ -109,6 +101,29 @@
     
         return nil;
     }];
+    
+    
+    qry = [ConfigData query];
+    
+    [[qry find] continueWithBlock:^id(BFTask *task) {
+        if(task.error) {
+            NSLog(@"listItems failed with error: %@", task.error);
+        } else {
+            
+            NSMutableArray* configList = [NSMutableArray arrayWithArray: task.result];
+            
+            for( ConfigData* configItem in configList ){
+                
+                NSLog( @"Disruption Range: %@", configItem.disruptionRange );
+                
+                self.config = configItem;
+                
+            }
+        }
+        
+        return nil;
+    }];
+
 
     
     return YES;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Twitter/Twitter.h>
 #import "Player.h"
+#import "ConfigData.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,6 +23,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) Player *player;
+@property (strong, nonatomic) ConfigData *config;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

@@ -25,11 +25,21 @@ NSArray *robots;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-      
+    
+//    [self.tableView setRowHeight:60.0f];
+
+    
+//    self.tableView.dataSource = self;
+
+    
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
+    
+//    [self.view sizeToFit];
+    
     appDelegate = [UIApplication sharedApplication].delegate;
     robots = [appDelegate getRobots];
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -39,7 +49,11 @@ NSArray *robots;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     tableView.layer.borderColor = [UIColor colorwithHexString:@"00b2ca" alpha:1 ].CGColor;
-    return [robots count];
+//    tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+    
+//    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    return [robots count ];
 }
 
  - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath {
@@ -84,6 +98,9 @@ NSArray *robots;
              
              if( [ status isEqualToString:@"disrupted"] ){
                  score = @"1";
+                 
+                 [lblPoints setText:@"point"];
+                 
              }
              
              UILabel *pointsLabel = (UILabel *)[cell viewWithTag:700];
@@ -93,8 +110,6 @@ NSArray *robots;
              break;
          }
      }
-     
-     [cell.contentView.layer setBorderColor:[UIColor colorwithHexString: robot.primaryColor alpha:1 ].CGColor];
      
      return cell; }
 
@@ -228,7 +243,7 @@ NSArray *robots;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0;
+    return 100.00;
 }
 
 /*

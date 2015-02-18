@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 
-@interface ScoreboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ScoreboardViewController : UITableViewController /* <UITableViewDelegate, UITableViewDataSource> */
 
 - (NSData *)base64DataFromString;
 

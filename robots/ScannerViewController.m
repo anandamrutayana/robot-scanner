@@ -18,6 +18,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "AppDelegate.h"
 #import "Player.h"
+#import "ConfigData.h"
 
 #define kMaxRadius 160
 
@@ -51,10 +52,14 @@
 @implementation ScannerViewController
 
 @synthesize proximity;
+@synthesize rayGun;
 @synthesize currentBeacon;
 
 AppDelegate *appDelegate;
 NSArray *robots;
+
+CGFloat physicalWidth;
+CGFloat physicalHeight;
 
 - (id)initWithBeacon:(ESTBeacon *)beacon
 {
@@ -75,27 +80,37 @@ NSArray *robots;
     
     robots = [appDelegate getRobots];
     
+    self.navigationItem.hidesBackButton = YES;    
     
     [self.parentViewController.navigationItem setTitle:@"Title"];
-    
-//    [UIColor colorWithRed:.41 green:.76 blue:.73 alpha:1];
     
     self.THEME_COLOR = [ UIColor colorwithHexString:@"7dcfb6" alpha:1];
     
     ///setup single halo layer
    PulsingHaloLayer *layer = [PulsingHaloLayer layer];
     self.halo = layer;
-    self.halo.position = self.beaconView.center;
-    [self.view.layer insertSublayer:self.halo below:self.beaconView.layer]; 
     
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+        
+    physicalWidth = screenRect.size.width * scale;
+    physicalHeight = screenRect.size.height * scale;
+    
+    NSArray *points = [NSArray arrayWithObjects:
+                       [NSValue valueWithCGPoint:CGPointMake( physicalWidth / ( scale * 2 ), 150)],
+                       [NSValue valueWithCGPoint:CGPointMake(7.7, 8.8)],
+                       nil];
+    
+    self.halo.position = [[points objectAtIndex:0] CGPointValue];
+
+    [self.view.layer insertSublayer:self.halo below:self.beaconView.layer];
     
     
     [self setupInitialValues];
     
-    
-    self.annotatedGauge = [[MSAnnotatedGauge alloc] initWithFrame:CGRectMake(20, 267, 340, 200)];
+    self.annotatedGauge = [[MSAnnotatedGauge alloc] initWithFrame:CGRectMake( ( physicalWidth / ( scale * 2 ) ) - 130, 230, 260, 200 ) ];
     self.annotatedGauge.minValue = 0;
-    self.annotatedGauge.maxValue = 20;
+    self.annotatedGauge.maxValue = [ appDelegate.config.scannerWidth integerValue ];
     self.annotatedGauge.titleLabel.text = @"Proximity to Robot ( metres )";
     self.annotatedGauge.startRangeLabel.text = @"Far";
     self.annotatedGauge.endRangeLabel.text = @"Close";
@@ -146,9 +161,6 @@ NSArray *robots;
         
         [self.beaconManager startEstimoteBeaconsDiscoveryForRegion:self.beaconRegion];
     }
-
-
-
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -258,19 +270,17 @@ NSArray *robots;
     
     ESTBeacon *firstBeacon = [beacons firstObject];
     
-    NSLog( @"UUID: %@", firstBeacon.proximityUUID );
-    
     double distance = [ firstBeacon.distance doubleValue ];
-                       
-    NSLog( @"RAW DISTANCE: %f", distance );
-
+    
     currentBeacon = [beacons firstObject];
+    
+    double disruptionRange = [ appDelegate.config.disruptionRange doubleValue ];
     
     if( [self checkIfWanted:currentBeacon ] ){
     
         if( distance > 0 ){
         
-            if( distance > 2 ){
+            if( distance > disruptionRange ){
     
                 proximity.text = [NSString stringWithFormat:@"%@", [self textForProximity:firstBeacon.proximity] ] ;
                 self.annotatedGauge.value = self.annotatedGauge.maxValue - (int) distance;
@@ -279,8 +289,6 @@ NSArray *robots;
             
             
                 [self.beaconManager stopRangingBeaconsInRegion:self.beaconRegion];
-            
-            
             
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
@@ -410,6 +418,7 @@ NSArray *robots;
         RobotViewController *controller = (RobotViewController *)segue.destinationViewController;
     
         controller.beaconID = currentBeacon.minor;
+    
 }
 
 

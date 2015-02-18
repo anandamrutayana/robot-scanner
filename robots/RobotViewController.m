@@ -29,22 +29,25 @@ NSArray *robots;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-//    progress=[[UILabel alloc] initWithFrame:CGRectMake(80, 15, 100, 50)];
-    progress.textColor=[UIColor colorwithHexString:@"00B2CA" alpha:1]; /*#d15600*/
-    [progress setText:@"Time : 0:30"];
-    progress.backgroundColor=[UIColor clearColor];
-    currMinute=0;
-    currSeconds=30;
-    
     
     appDelegate = [UIApplication sharedApplication].delegate;
+    
+    self.navigationItem.hidesBackButton = YES;
+    // Do any additional setup after loading the view.
+    
+    progress.textColor=[UIColor colorwithHexString:@"00B2CA" alpha:1]; /*#d15600*/
+    
+    NSString *timeString = @"Time : 0:";
+    NSString *timeText = [ timeString stringByAppendingString: appDelegate.config.disruptionTime ];
+    
+    [progress setText:timeText];
+    progress.backgroundColor=[UIColor clearColor];
+    currMinute=0;
+    currSeconds= [ appDelegate.config.disruptionTime intValue ];
     
     robots = [appDelegate getRobots];
     
     NSString *id = [ self.beaconID stringValue ];
-    
     
     for( int count=0; count < robots.count; count++ ){
         
@@ -52,7 +55,7 @@ NSArray *robots;
         
         if( [robot.iBeacon isEqualToString: id ] ){
             
-            NSLog( @"match: @%@", robot.name );
+            self.navigationItem.title = robot.name;
             
             NSData* imageData = [ self base64DataFromString: robot.fullshot ];
             
@@ -225,6 +228,17 @@ NSArray *robots;
         [[appDelegate.player save] continueWithBlock:^id(BFTask *task) {
             if(task.error) {
                 NSLog(@"updateItem failed with error: %@", task.error);
+            }else{
+                
+                NSString* title = [NSString stringWithFormat:@"%@ caught you!", self.thisRobot.name ];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title
+                                                                message:@"You've lost a disruption point."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                
+                [alert show];
             }
             return nil;
         }];
@@ -232,17 +246,9 @@ NSArray *robots;
         
         [timer invalidate];
         
-        NSString* title = [NSString stringWithFormat:@"%@ caught you!", self.thisRobot.name ];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title
-                                                        message:@"You've lost a disruption point."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
         
         
-        [alert show];
-    }
+            }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -273,13 +279,7 @@ NSArray *robots;
     
         if( [newString isEqualToString:[ self.thisRobot.disruption stringValue ] ] ){
         
-            NSString* title = [NSString stringWithFormat:@"Well done!" ];
-        
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title
-                                    message: [ NSString stringWithFormat:@"You've disrupted %@ .", self.thisRobot.name ]
-                                    delegate:self
-                                    cancelButtonTitle:@"OK"
-                                    otherButtonTitles:nil];
+            
             
             
             [ self setStatus:@"disrupted" ];
@@ -287,14 +287,25 @@ NSArray *robots;
             [[appDelegate.player save] continueWithBlock:^id(BFTask *task) {
                 if(task.error) {
                     NSLog(@"updateItem failed with error: %@", task.error);
+                }else{
+                    
+                    NSString* title = [NSString stringWithFormat:@"Well done!" ];
+                    
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: title
+                                                                    message: [ NSString stringWithFormat:@"You've disrupted %@ .", self.thisRobot.name ]
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    
+                    [alert show];
+                    
                 }
                 return nil;
             }];
                     
             
             [timer invalidate];
-            [alert show];
-                    
+            
         }else{
             
             /* they've entered the wrong four digit code */

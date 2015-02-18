@@ -34,6 +34,8 @@ NSArray *help;
 {
     [super viewDidLoad];
     
+    [ logInButton setHidden: TRUE ];
+    
     
     IBMQuery *qry = [RemoteHelp query];
     
@@ -50,7 +52,6 @@ NSArray *help;
             for( RemoteHelp* help in helpList ){
                 
                 NSLog(@"Title: %@", help.title);
-                
                 
                 NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
                 formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -73,8 +74,6 @@ NSArray *help;
             NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"screen" ascending:YES]];
             help = [unsorted sortedArrayUsingDescriptors:sortDescriptors];
             
-            
-            
             // Create page view controller
             self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
             self.pageViewController.dataSource = self;
@@ -91,115 +90,87 @@ NSArray *help;
             [self.pageViewController didMoveToParentViewController:self];
             
             self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-100);
-        }
-        
-        TWTRLogInButton* newlogInButton =  [TWTRLogInButton
-                                            buttonWithLogInCompletion:
-                                            ^(TWTRSession* session, NSError* error) {
-                                                if (session) {
-                                                    
-                                                    NSLog(@"signed in as %@", [session userName]);
-                                                    
-                                                    IBMQuery *qry = [Player query];
-                                                    
-                                                    [[qry find] continueWithBlock:^id(BFTask *task) {
-                                                        if(task.error) {
-                                                            NSLog(@"listItems failed with error: %@", task.error);
-                                                        } else {
-                                                            
-                                                            BOOL playerFound = false;
-                                                            
-                                                            NSMutableArray* playerList = [NSMutableArray arrayWithArray: task.result];
-                                                            
-                                                            for( Player* player in playerList ){
+            
+            TWTRLogInButton* newlogInButton =  [TWTRLogInButton
+                                                buttonWithLogInCompletion:
+                                                ^(TWTRSession* session, NSError* error) {
+                                                    if (session) {
+                                                        
+                                                        NSLog(@"signed in as %@", [session userName]);
+                                                        
+                                                        IBMQuery *qry = [Player query];
+                                                        
+                                                        [[qry find] continueWithBlock:^id(BFTask *task) {
+                                                            if(task.error) {
+                                                                NSLog(@"listItems failed with error: %@", task.error);
+                                                            } else {
                                                                 
-                                                                NSArray* r = player.robots;
+                                                                BOOL playerFound = false;
                                                                 
-                                                                for( int rcount = 0; rcount < r.count; rcount++ ){
-                                                                    NSMutableDictionary* item = [ r objectAtIndex:rcount ];
-                                                                }
+                                                                NSMutableArray* playerList = [NSMutableArray arrayWithArray: task.result];
                                                                 
-                                                                
-                                                                if( [ player.name isEqualToString: [ session userName ] ]){
+                                                                for( Player* player in playerList ){
                                                                     
-                                                                    /* Player has played before - so we don't need to make a new
-                                                                     accound for them */
+                                                                    NSArray* r = player.robots;
                                                                     
-                                                                    NSLog( @"PLAYER FOUND" );
-                                                                    
-                                                                    playerFound = true;
-                                                                    
-                                                                    [self performSegueWithIdentifier:@"scanSegue" sender:self];
-                                                                    
-                                                                    appDelegate.player = player;
-                                                                    
-                                                                    break;
-                                                                }
-                                                            }
-                                                            
-                                                            if( playerFound == false ){
-                                                                
-                                                                Player* newPlayer = [[Player alloc] init];
-                                                                
-                                                                newPlayer.name = [ session userName ];
-                                                                newPlayer.robots = [self createNewScoreTemplate];
-                                                                
-                                                                [[newPlayer save] continueWithBlock:^id(BFTask *task) {
-                                                                    if(task.error) {
-                                                                        NSLog(@"createItem failed with error: %@", task.error);
+                                                                    for( int rcount = 0; rcount < r.count; rcount++ ){
+                                                                        NSMutableDictionary* item = [ r objectAtIndex:rcount ];
                                                                     }
                                                                     
-                                                                    appDelegate.player = newPlayer;
                                                                     
-                                                                    [self performSegueWithIdentifier:@"scanSegue" sender:self];
+                                                                    if( [ player.name isEqualToString: [ session userName ] ]){
+                                                                        
+                                                                        /* Player has played before - so we don't need to make a new
+                                                                         accound for them */
+                                                                        
+                                                                        NSLog( @"PLAYER FOUND" );
+                                                                        
+                                                                        playerFound = true;
+                                                                        
+                                                                        [self performSegueWithIdentifier:@"scanSegue" sender:self];
+                                                                        
+                                                                        appDelegate.player = player;
+                                                                        
+                                                                        break;
+                                                                    }
+                                                                }
+                                                                
+                                                                if( playerFound == false ){
                                                                     
-                                                                    return nil;
-                                                                }];
+                                                                    Player* newPlayer = [[Player alloc] init];
+                                                                    
+                                                                    newPlayer.name = [ session userName ];
+                                                                    newPlayer.robots = [self createNewScoreTemplate];
+                                                                    
+                                                                    [[newPlayer save] continueWithBlock:^id(BFTask *task) {
+                                                                        if(task.error) {
+                                                                            NSLog(@"createItem failed with error: %@", task.error);
+                                                                        }
+                                                                        
+                                                                        appDelegate.player = newPlayer;
+                                                                        
+                                                                        [self performSegueWithIdentifier:@"scanSegue" sender:self];
+                                                                        
+                                                                        return nil;
+                                                                    }];
+                                                                }
                                                             }
-                                                        }
-                                                        return nil;
+                                                            return nil;
+                                                            
+                                                        }];
                                                         
-                                                    }];
-                                                    
-                                                } else {
-                                                    NSLog(@"error: %@", [error localizedDescription]);
-                                                }
-                                            }];
-        
-        logInButton.logInCompletion = newlogInButton.logInCompletion;
-        
-        [ logInButton bringSubviewToFront:self.view ];
-
+                                                    } else {
+                                                        NSLog(@"error: %@", [error localizedDescription]);
+                                                    }
+                                                }];
+            
+            logInButton.logInCompletion = newlogInButton.logInCompletion;
+            
+            [ logInButton setHidden: FALSE ];
+        }
         
         return nil;
     }];
-
-    
-    
-    
-    // Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
-    
-//    // Create page view controller
-//    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-//    self.pageViewController.dataSource = self;
-//    
-//    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-//    NSArray *viewControllers = @[startingViewController];
-//    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-//    
-//    // Change the size of page view controller
-//    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
-//    
-//    [self addChildViewController:_pageViewController];
-//    [self.view addSubview:_pageViewController.view];
-//    [self.pageViewController didMoveToParentViewController:self];
-    
-    
-//    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//    
-//    help = [appDelegate getHelp];
 }
 
 - (void)didReceiveMemoryWarning

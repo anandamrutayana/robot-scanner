@@ -31,7 +31,6 @@
     self.backgroundImageView.image = _image;
     self.subtext.text = self.descriptionText;
     
-//    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
     
     if( [ self.help.weight isEqualToString:@"bold" ] ){

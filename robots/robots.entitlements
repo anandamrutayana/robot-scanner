@@ -3,9 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>mybluemix.net</string>
-		<string>robot.mybluemix.net</string>
-	</array>
+	<array/>
 </dict>
 </plist>
