@@ -45,9 +45,9 @@
 		227196D61A635B2C00C9116E /* IBMData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D11A635B2C00C9116E /* IBMData.framework */; };
 		227196D71A635B2C00C9116E /* IBMFileSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D21A635B2C00C9116E /* IBMFileSync.framework */; };
 		227196D91A635B2C00C9116E /* IBMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196D41A635B2C00C9116E /* IBMPush.framework */; };
-		227196DC1A635C0500C9116E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 227196DB1A635C0500C9116E /* Player.m */; };
 		227196DF1A635F9900C9116E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227196DE1A635F9900C9116E /* Foundation.framework */; };
 		2271FD421A950121007B6BBD /* story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2271FD411A950121007B6BBD /* story.jpg */; };
+		2271FDC01A9D9D3A007B6BBD /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 2271FDBF1A9D9D3A007B6BBD /* Player.m */; };
 		22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203421A57B20F00249E31 /* TwitterKit.framework */; };
 		22B203461A57B20F00249E31 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22B203431A57B20F00249E31 /* TwitterKitResources.bundle */; };
 		22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B203441A57B20F00249E31 /* Fabric.framework */; };
@@ -182,10 +182,10 @@
 		227196D21A635B2C00C9116E /* IBMFileSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMFileSync.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMFileSync.framework"; sourceTree = "<group>"; };
 		227196D31A635B2C00C9116E /* IBMLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMLocation.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMLocation.framework"; sourceTree = "<group>"; };
 		227196D41A635B2C00C9116E /* IBMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBMPush.framework; path = "../../../Downloads/ibm-bluemix-sdk-ios (4)/IBMPush.framework"; sourceTree = "<group>"; };
-		227196DA1A635C0500C9116E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../sbclient/SBI/Player.h; sourceTree = "<group>"; };
-		227196DB1A635C0500C9116E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../../sbclient/SBI/Player.m; sourceTree = "<group>"; };
 		227196DE1A635F9900C9116E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2271FD411A950121007B6BBD /* story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = story.jpg; sourceTree = "<group>"; };
+		2271FDBE1A9D9D25007B6BBD /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		2271FDBF1A9D9D3A007B6BBD /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		22B203421A57B20F00249E31 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		22B203431A57B20F00249E31 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		22B203441A57B20F00249E31 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -307,11 +307,11 @@
 		221C811E1A54C1D00000D6B6 /* robots */ = {
 			isa = PBXGroup;
 			children = (
+				2271FDBF1A9D9D3A007B6BBD /* Player.m */,
+				2271FDBE1A9D9D25007B6BBD /* Player.h */,
 				22FFB7931A70838500A495E8 /* robots.entitlements */,
-				227196DA1A635C0500C9116E /* Player.h */,
 				22FFB7BD1A79E30700A495E8 /* ScoreCardData.h */,
 				22FFB7BE1A79E30700A495E8 /* ScoreCardData.m */,
-				227196DB1A635C0500C9116E /* Player.m */,
 				22B203521A5B7DD400249E31 /* images */,
 				22B2034C1A5AD8B600249E31 /* PulsingHaloLayer.h */,
 				22B2034D1A5AD8B600249E31 /* PulsingHaloLayer.m */,
@@ -664,7 +664,6 @@
 			files = (
 				22B203501A5AD8B600249E31 /* PulsingHaloLayer.m in Sources */,
 				221C812B1A54C1D00000D6B6 /* ScannerViewController.m in Sources */,
-				227196DC1A635C0500C9116E /* Player.m in Sources */,
 				225994181A6CAA91009BB1A4 /* RobotModel.xcdatamodeld in Sources */,
 				221C81251A54C1D00000D6B6 /* AppDelegate.m in Sources */,
 				227192941A5F5E2400C9116E /* MSRangeGauge.m in Sources */,
@@ -678,6 +677,7 @@
 				225994071A695E43009BB1A4 /* ScoreboardViewController.m in Sources */,
 				227192931A5F5E2400C9116E /* MSNeedleView.m in Sources */,
 				227192951A5F5E2400C9116E /* MSSimpleGauge.m in Sources */,
+				2271FDC01A9D9D3A007B6BBD /* Player.m in Sources */,
 				227192901A5F5E2400C9116E /* MSAnnotatedGauge.m in Sources */,
 				22FFB7BF1A79E30700A495E8 /* ScoreCardData.m in Sources */,
 				22FFB7BC1A76D9D900A495E8 /* Help.m in Sources */,

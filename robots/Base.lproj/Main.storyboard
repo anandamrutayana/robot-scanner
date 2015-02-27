@@ -78,20 +78,20 @@
                                 <rect key="frame" x="1" y="129" width="599" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-3P-wmc">
-                                        <rect key="frame" x="252" y="21" width="42" height="21"/>
+                                        <rect key="frame" x="252" y="21" width="64" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.63921568630000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLK-Dk-P80">
-                                        <rect key="frame" x="155" y="67" width="240" height="128"/>
+                                        <rect key="frame" x="204" y="102" width="180" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="MfK-xT-0nU"/>
                                             <constraint firstAttribute="width" constant="180" id="kTl-YA-yqL"/>
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apT-W3-ZYY">
-                                        <rect key="frame" x="157" y="218" width="240" height="128"/>
+                                        <rect key="frame" x="187" y="288" width="220" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="OVd-fA-IGV"/>
@@ -356,7 +356,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-lI-Xda">
-                                <rect key="frame" x="120" y="290" width="296" height="80"/>
+                                <rect key="frame" x="120" y="334" width="296" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.062745098039215685" green="0.49803921568627452" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

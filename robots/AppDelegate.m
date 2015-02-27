@@ -46,8 +46,8 @@
     pageControl.currentPageIndicatorTintColor = [UIColor colorwithHexString:@"00b2ca" alpha:1];
     pageControl.backgroundColor = [UIColor whiteColor];
     
-    [[Twitter sharedInstance] startWithConsumerKey:@"PaUzPfdUlO1OroMXEb3isT6b5"
-                                    consumerSecret:@"8V7uvTzfiet2CZ85GG3EK7UueJRPGfiZIB9iYJceyj5RrOA2I3"];
+    [[Twitter sharedInstance] startWithConsumerKey:@""
+                                    consumerSecret:@""];
     [Fabric with:@[[Twitter sharedInstance]]];
     
     
@@ -61,9 +61,10 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     
-    [IBMBluemix initializeWithApplicationId: @"YOUR APP ID"
-                       andApplicationSecret: @"YOUR APP SECRET"
-                        andApplicationRoute: @"YOUR APP URL" ];
+    [IBMBluemix initializeWithApplicationId: @""
+                       andApplicationSecret: @""
+                        andApplicationRoute: @""];
+    
     
     [IBMData initializeService];
     
