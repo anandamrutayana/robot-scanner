@@ -21,5 +21,5 @@
 @dynamic techZone;
 @dynamic primaryColor;
 @dynamic secondaryColor;
-
+@dynamic
 @end
